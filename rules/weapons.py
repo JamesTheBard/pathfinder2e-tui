@@ -1,0 +1,62 @@
+from dataclasses import dataclass
+import math
+
+from rules.helpers import fix_number
+
+
+@dataclass
+class Weapon:
+    name: str
+    keywords: list[str]
+    damage_type: str = ""
+    proficiency: int = 0
+    potency: int = 0
+    attack_bonus: int = 0
+    damage_bonus: int = 0
+    strength: int = 0
+    dexterity: int = 0
+    damage_die_size: int = 0
+    damage_die_quantity: int = 1
+    striking: int = 0
+    ammo: int = 0
+    weapon_type: str = "melee"
+
+    @property
+    def get_damage(self):
+        damage_bonus = self.damage_bonus
+        if "propulsive" in self.keywords:
+            damage_bonus += math.floor(self.strength / 2)
+        if self.weapon_type == "melee":
+            damage_bonus += self.strength
+
+        dice_number = self.damage_die_quantity + self.striking
+
+        return f"{dice_number}d{self.damage_die_size}{fix_number(damage_bonus, True)}"
+
+    @property
+    def get_attacks(self):
+        attack_bonus = self.attack_bonus + self.potency + self.proficiency
+
+        if "finesse" in self.keywords:
+            attack_bonus += max(self.dexterity, self.strength)
+        elif self.weapon_type == "ranged":
+            attack_bonus += self.dexterity
+        elif self.weapon_type == "melee":
+            attack_bonus += self.strength
+
+        multiattack_penalty = -4 if "agile" in self.keywords else -5
+        attacks = [fix_number(attack_bonus + (i * multiattack_penalty), True) for i in range(3)]
+        return '/'.join(attacks)
+
+
+class WeaponsMixin:
+
+    def process_weapons(self):
+        for weapon_name, data in self.data.weapons.items():
+            result = Weapon(name=weapon_name.replace('_', ' ').title(), keywords=list())
+            [setattr(result, key, value) for key, value in data.items()]
+            result.keywords = self.process_keywords(result.keywords)
+            result.strength = self.stats.get_modifier("strength")
+            result.dexterity = self.stats.get_modifier("dexterity")
+            result.proficiency = self.get_proficiency(result.proficiency)
+            yield result

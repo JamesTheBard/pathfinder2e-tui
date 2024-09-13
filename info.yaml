@@ -1,0 +1,76 @@
+---
+character:
+  name: Kurosuke Ayame
+  player: Jason Weatherly
+  classes:
+    - Cleric 4
+stats:
+  strength: 10
+  dexterity: 12
+  constitution: 12
+  intelligence: 12
+  wisdom: 18
+  charisma: 16
+saves:
+  perception:
+    proficiency: trained
+  fortitude:
+    proficiency: trained
+  reflex:
+    proficiency: trained
+  willpower:
+    proficiency: expert
+skills:
+  deception:
+    proficiency: trained
+  diplomacy:
+    proficiency: trained
+  intimidation:
+    proficiency: trained
+  "lore: politics":
+    proficiency: trained
+  medicine:
+    proficiency: trained
+  religion:
+    proficiency: trained
+  society:
+    proficiency: expert
+armour:
+  name: Unarmored
+  proficiency: trained
+  keywords: 
+  ac_bonus: 0
+  equipped: True
+shield:
+  name: Standard Shield
+  bonus: 2
+  hardness: 8
+  total_hp: 64
+weapons:
+  katana:
+    proficiency: trained
+    weapon_type: melee
+    damage_type: slashing
+    damage_die_size: 6
+    striking: 1
+    potency: 1
+    keywords: uncommon, deadly d8, two-hand 1d10, versatile p
+  dagger:
+    proficiency: trained
+    weapon_type: melee
+    damage_type: piercing
+    damage_die_size: 4
+    keywords: agile, finesse, throw 10 ft., versatile s
+  wakazashi:
+    proficiency: trained
+    weapon_type: melee
+    damage_type: slashing
+    damage_die_size: 4
+    keywords: uncommon, agile, deadly d8, finesse, versatile p
+  spiritual_armament:
+    weapon_type: spell
+    attack_bonus: 10
+    damage_type: spirit or slashing
+    damage_die_size: 8
+    damage_die_quantity: 2
+    keywords: concentrate, manipulate, sanctified, spirit, range 120

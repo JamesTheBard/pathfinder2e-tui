@@ -1,0 +1,39 @@
+StatsScreen {
+    layout: grid;
+    grid-size: 3 5;
+    grid-gutter: 1 0;
+}
+
+#stats {
+    row-span: 2;
+    column-span: 1;
+    border: panel $accent;
+}
+
+#saves {
+    row-span: 2;
+    column-span: 1;
+    border: panel $accent;
+}
+
+#skills {
+    row-span: 4;
+    column-span: 2;
+    background: #101010;
+    border: panel $accent;
+    height: 100%;
+}
+
+#character-info {
+    row-span: 1;
+    column-span: 2;
+    border: panel $accent;
+    height: 100%;
+}
+
+#hp-stuff {
+    row-span: 1;
+    column-span: 1;
+    border: panel $accent;
+    height: 100%;
+}
