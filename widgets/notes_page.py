@@ -9,9 +9,10 @@ class NoteEditorWidget(TextArea):
         ("ctrl+s", "save_content", "Save"),
     ]
 
-    def __init__(self, **kwargs):
+    def __init__(self, savefile, **kwargs):
         super().__init__(**kwargs)
-        self.load_from_file("characters/notes.txt")
+        self.savefile = savefile
+        self.load_from_file(self.savefile)
         
     def load_from_file(self, filename: str | Path):
         filename = Path(filename)
@@ -26,9 +27,9 @@ class NoteEditorWidget(TextArea):
         filename.write_text(self.text)
 
     def on_text_area_changed(self, event: TextArea.Changed):
-        markdown = self.app.query_exactly_one("#testid")
+        markdown = self.app.query_exactly_one("#notesdisplay")
         markdown.update(self.text)
 
     def action_save_content(self):
-        self.save_to_file("characters/notes.txt")
+        self.save_to_file(self.savefile)
         self.notify("Notes saved.")

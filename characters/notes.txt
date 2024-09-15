@@ -1,4 +1,9 @@
-# Part Loot
+# Campaign Notes
 
-- All of the things
-- The rest of the things
+These are some awesome notes!
+
+## Loot
+
+- All of the loot...
+- More loot
+- Bracers of Armor +4

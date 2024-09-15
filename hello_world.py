@@ -61,7 +61,7 @@ class NotesScreen(Screen):
         with TabbedContent():
             with TabPane("Notes"):
                 yield VerticalScroll(
-                    Markdown("# This is a test.", id="testid")
+                    Markdown("# This is a test.", id="notesdisplay")
                 )
             with TabPane("Editor"):
                 yield VerticalScroll(
