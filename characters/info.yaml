@@ -9,8 +9,8 @@ character:
   languages:
     - common
     - minkaian
-  classes:
-    - Cleric 4
+  class: cleric
+  level: 4
 hit_points:
   class: 8
   toughness: false

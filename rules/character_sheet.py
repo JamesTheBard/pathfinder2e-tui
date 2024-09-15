@@ -19,8 +19,8 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         self.yaml_file = Path(yaml_file)
         with self.yaml_file.open('r') as f:
             self.data = Box(yaml.safe_load(f))
-        self.level = sum(int(i.split(' ')[-1])
-                         for i in self.data.character.classes)
+        self.character_class = self.data.character["class"]
+        self.character_level = self.data.character.level
         self.stats = self.process_stats()
         self.hp = self.process_hit_points()
         self.armor = self.get_armor()
@@ -59,7 +59,7 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
 
         if prof_level not in bonus_map.keys() or prof_level == "untrained":
             return bonus_map[prof_level]
-        return bonus_map[prof_level] + self.level
+        return bonus_map[prof_level] + self.character_level
 
     def process_keywords(self, keywords: str | list | tuple) -> list:
         if isinstance(keywords, str):

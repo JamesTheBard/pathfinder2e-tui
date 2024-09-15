@@ -125,7 +125,7 @@ class NamesMixin:
             heritage=data.heritage,
             background=data.background,
             languages=data.languages,
-            classes=data.classes,
+            classes=f"{data["class"]} {data.level}",
         )
 
         optional = ["diety"]
@@ -164,7 +164,7 @@ class HitPointsMixin:
         results = HitPoints(
             class_hp=data["class"],
             ancestry_hp=data.ancestry,
-            level=self.level,
+            level=self.character_level,
             constitution=self.stats.get_modifier("constitution"),
         )
 
