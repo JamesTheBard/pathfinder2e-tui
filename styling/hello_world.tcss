@@ -4,6 +4,12 @@ StatsScreen {
     grid-gutter: 1 0;
 }
 
+CombatScreen {
+    layout: grid;
+    grid-size: 4 6;
+    grid-gutter: 1 0;
+}
+
 #stats {
     row-span: 2;
     column-span: 1;
@@ -33,6 +39,37 @@ StatsScreen {
 
 #hp-stuff {
     row-span: 1;
+    column-span: 1;
+    border: panel $accent;
+    height: 100%;
+}
+
+#armor {
+    row-span: 2;
+    column-span: 1;
+    border: panel $accent;
+    height: 100%;
+    margin-left: 0;
+}
+
+#shield {
+    row-span: 2;
+    column-span: 1;
+    border: panel $accent;
+    height: 100%;
+    margin-left: 0;
+}
+
+#weapon {
+    row-span: 6;
+    column-span: 3;
+    border: panel $accent;
+    height: 100%;
+    width: 100%;
+}
+
+#notes {
+    row-span: 2;
     column-span: 1;
     border: panel $accent;
     height: 100%;

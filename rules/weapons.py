@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import math
 
 from rules.helpers import fix_number
+from typing import Optional
 
 
 @dataclass
@@ -9,7 +10,8 @@ class Weapon:
     name: str
     keywords: list[str]
     damage_type: str = ""
-    proficiency: int = 0
+    proficiency: str = "untrained"
+    proficiency_bonus: int = 0
     potency: int = 0
     attack_bonus: int = 0
     damage_bonus: int = 0
@@ -20,6 +22,8 @@ class Weapon:
     striking: int = 0
     ammo: int = 0
     weapon_type: str = "melee"
+    source: str = "Unknown"
+    notes: Optional[str] = None
 
     @property
     def get_damage(self):
@@ -35,7 +39,7 @@ class Weapon:
 
     @property
     def get_attacks(self):
-        attack_bonus = self.attack_bonus + self.potency + self.proficiency
+        attack_bonus = self.attack_bonus + self.potency + self.proficiency_bonus
 
         if "finesse" in self.keywords:
             attack_bonus += max(self.dexterity, self.strength)
@@ -46,7 +50,7 @@ class Weapon:
 
         multiattack_penalty = -4 if "agile" in self.keywords else -5
         attacks = [fix_number(attack_bonus + (i * multiattack_penalty), True) for i in range(3)]
-        return '/'.join(attacks)
+        return attacks
 
 
 class WeaponsMixin:
@@ -58,5 +62,5 @@ class WeaponsMixin:
             result.keywords = self.process_keywords(result.keywords)
             result.strength = self.stats.get_modifier("strength")
             result.dexterity = self.stats.get_modifier("dexterity")
-            result.proficiency = self.get_proficiency(result.proficiency)
+            result.proficiency_bonus = self.get_proficiency(result.proficiency)
             yield result

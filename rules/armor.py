@@ -16,12 +16,13 @@ class Armor:
     equipped: bool = True
     potency: int = 0
     bonus: int = 0
-    proficiency: int = 0
+    proficiency: str = "untrained"
+    proficiency_bonus: int = 0
     dexterity: int = 0
 
     @property
     def total(self):
-        return 10 + self.ac_bonus + self.potency + self.bonus + self.dexterity + self.proficiency
+        return 10 + self.ac_bonus + self.potency + self.bonus + self.dexterity + self.proficiency_bonus
 
 
 @dataclass
@@ -53,7 +54,8 @@ class ArmorMixin:
 
         return Armor(
             name=data.get("name"),
-            proficiency=self.get_proficiency(data.get("proficiency", "untrained")),
+            proficiency=data.get("proficiency", "untrained"),
+            proficiency_bonus=self.get_proficiency(data.get("proficiency", "untrained")),
             keywords=list(keywords),
             ac_bonus=data.get("ac_bonus", 0),
             dex_cap=data.get("dex_cap", None),

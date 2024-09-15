@@ -1,0 +1,118 @@
+---
+character:
+  name: Kurosuke Ayame
+  player: Jason Weatherly
+  classes:
+    - Cleric 4
+stats:
+  strength: 10
+  dexterity: 12
+  constitution: 12
+  intelligence: 12
+  wisdom: 18
+  charisma: 16
+saves:
+  perception:
+    proficiency: trained
+  fortitude:
+    proficiency: trained
+  reflex:
+    proficiency: trained
+  willpower:
+    proficiency: expert
+skills:
+  deception:
+    proficiency: trained
+  diplomacy:
+    proficiency: trained
+  intimidation:
+    proficiency: trained
+  "lore: politics":
+    proficiency: trained
+  medicine:
+    proficiency: trained
+  religion:
+    proficiency: trained
+  society:
+    proficiency: expert
+armour:
+  name: Unarmored
+  proficiency: trained
+  equipped: True
+shield:
+  name: Sturdy Shield
+  bonus: 2
+  hardness: 8
+  total_hp: 64
+weapons:
+  katana:
+    proficiency: trained
+    weapon_type: melee
+    damage_type: slashing
+    damage_die_size: 6
+    striking: 1
+    potency: 1
+    keywords: uncommon, deadly d8, two-hand 1d10, versatile p
+    source: Player Core, p. 278
+    notes: A katana is a curved, single-edged sword known for its wickedly sharped blade.
+  dagger:
+    proficiency: trained
+    weapon_type: melee
+    damage_type: piercing
+    damage_die_size: 4
+    keywords: agile, finesse, throw 10 ft., versatile s
+    source: Player Core, p. 277
+    notes: This small, bladed weapon is held in one hand and used to stab a creature in close combat. It can also be thrown.
+  wakazashi:
+    proficiency: trained
+    weapon_type: melee
+    damage_type: slashing
+    damage_die_size: 4
+    keywords: uncommon, agile, deadly d8, finesse, versatile p
+    source: Player Core, p. 278
+    notes: This short-bladed, single-edged sword is typically carried as part of a pair alongside a katana.
+  spiritual_armament:
+    weapon_type: spell
+    proficiency: trained
+    attack_bonus: 4
+    damage_type: spirit or slashing
+    damage_die_size: 8
+    damage_die_quantity: 2
+    keywords: concentrate, manipulate, sanctified, spirit, range 120
+    source: Player Core, p. 359
+    notes: >
+      You create a ghostly, magical echo of one weapon you're wielding or wearing and fling it. Attempt a spell attack roll against the target's AC, dealing 2d8 damage on a hit (or double damage on a critical hit). The damage type is the same as the chosen weapon (or any of its types for a versatile weapon). The attack deals spirit damage instead if that would be more detrimental to the creature (as determined by the GM). This attack uses and contributes to your multiple attack penalty. After the attack, the weapon returns to your side. If you sanctify the spell, the attacks are sanctified as well.
+      
+      Each time you Sustain the spell, you can repeat the attack against any creature within 120 feet.
+
+      **Heightened (+2)** The damage increases by 1d8.
+  divine_lance:
+    weapon_type: spell
+    proficiency: trained
+    attack_bonus: 4
+    damage_type: spirit
+    damage_die_size: 4
+    damage_die_quantity: 3
+    keywords: attack, cantrip, concentrate, manipulate, sanctified, spirit, range 60
+    source: Player Core, p. 325
+    notes: >
+      You unleash a beam of divine energy. Make a ranged spell attack against the target's AC. On a hit, the target takes 2d4 spirit damage (double damage on a critical hit).
+
+      **Heightened (+1)** The damage increases by 1d4.
+  needle_darts:
+    weapon_type: spell
+    proficiency: trained
+    attack_bonus: 4
+    damage_type: piercing
+    damage_die_size: 4
+    damage_die_quantity: 4
+    keywords: attack, cantrip, concentrate, manipulate, metal, range 60
+    source: Rage of Elements, p. 144
+    notes: >
+      You shape three needles out of a piece of metal in your possession and send them flying in a tight group toward one target. Make a spell attack roll against your target's AC. The needles deal 3d4 piercing damage and might cause bleeding. The needles impart any special properties of the metal that forms them; for instance, _cold iron_ needles deal additional damage to creatures with weakness to cold iron. All the needles are made of the same metal, and the metal returns to you after the attack.
+
+      **Critical Success** The target takes double damage and 1 persistent bleed damage.
+      
+      **Success** The target takes full damage.
+
+      **Heightened (+1)** You send one additional needle, increasing the regular damage by 1d4 and increasing the persistent bleed damage on a critical hit by 1.

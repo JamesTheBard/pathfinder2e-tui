@@ -3,10 +3,17 @@ from textual.widget import Widget
 from textual.widgets import DataTable
 
 
-def fix_number(number: int, ignore_zero=False) -> str:
+def fix_number(number: int, ignore_zero=False, pad_left: int=None) -> str:
+    result = str()
     if number == 0 and not ignore_zero:
-        return '0'
-    return str(number) if number < 0 else f'+{number}'
+        result = '0'
+    else:
+        result = str(number) if number < 0 else f'+{number}'
+
+    if pad_left != None:
+        result = f"{result:>{pad_left}}"
+    
+    return result
 
 
 prof_map = {
@@ -16,6 +23,8 @@ prof_map = {
     "master": "🅼",
     "legendary": "🅻",
 }
+
+attack_map = ["➀", "➁", "➂"]
 
 
 class TableWidget(Widget):
@@ -35,3 +44,5 @@ class TableWidget(Widget):
         table.show_header = True
         table.add_rows(self.content)
         table.zebra_stripes = True
+        table.cursor_type = "row"
+        table.show_cursor = False

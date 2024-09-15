@@ -1,9 +1,12 @@
 from textual.app import App, ComposeResult
 from textual.screen import Screen
-from textual.widgets import Footer, Header, Static
+from textual.widgets import Footer, Header, Static, Placeholder
 
 from widgets.data import cs
 from widgets.stats_page import SavesWidget, SkillsWidget, StatsWidget
+from widgets.weapons_page import ArmorWidget, ShieldWidget, NotesWidget, WeaponsWidget
+
+from widgets.data import cs
 
 
 class CombatScreen(Screen):
@@ -12,7 +15,11 @@ class CombatScreen(Screen):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Static("This is a test.")
+        yield ArmorWidget(id="armor")
+        # yield Placeholder("Weapons go here", id="weapon")
+        yield WeaponsWidget(id="weapon")
+        yield ShieldWidget(id="shield")
+        yield NotesWidget(id="notes")
         yield Footer()
 
 
@@ -72,5 +79,8 @@ class PF2eCharacterSheet(App):
 
 
 if __name__ == "__main__":
+    cs.load_character_sheet('characters/info.yaml')
+    cs.load_file_as_text('characters/feats.md', "feats")
+    cs.load_file_as_text('characters/notes.txt', "notes")
     app = PF2eCharacterSheet()
     app.run()

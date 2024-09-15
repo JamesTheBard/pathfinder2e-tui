@@ -28,6 +28,13 @@ class CharacterSheet(SkillsMixin, StatsMixin, SavesMixin, ArmorMixin, WeaponsMix
         self.saves = self.process_saves()
         self.weapons = self.process_weapons()
 
+    def load_file_as_text(self, filename: Path | str, attrib: str):
+        try:
+            setattr(self, attrib, Path(filename).read_text())
+        except FileNotFoundError:
+            Path(filename).touch()
+            setattr(self, attrib, "")
+
     def refresh(self):
         self.load_character_sheet(self.yaml_file)
 
