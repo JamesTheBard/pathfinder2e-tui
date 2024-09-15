@@ -67,7 +67,7 @@ class NotesScreen(Screen):
                 )
             with TabPane("Editor"):
                 yield VerticalScroll(
-                    NoteEditorWidget(savefile="characters/notes.txt")
+                    NoteEditorWidget(savefile="characters/notes.md")
                 )
 
 
