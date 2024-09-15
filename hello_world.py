@@ -1,10 +1,12 @@
 from textual.app import App, ComposeResult
 from textual.screen import Screen
-from textual.widgets import Footer, Header, Static, Placeholder
+from textual.widgets import Footer, Header, Static, TabbedContent, TabPane, Markdown, TextArea
+from textual.containers import VerticalScroll
 
 from widgets.data import cs
 from widgets.stats_page import SavesWidget, SkillsWidget, StatsWidget
 from widgets.weapons_page import ArmorWidget, ShieldWidget, NotesWidget, WeaponsWidget
+from widgets.notes_page import NoteEditorWidget
 
 from widgets.data import cs
 
@@ -49,6 +51,24 @@ class FeatsScreen(Screen):
         yield Footer()
 
 
+class NotesScreen(Screen):
+
+    SUB_TITLE = "Notes"
+
+    def compose(self) -> ComposeResult:
+        yield Header()
+        yield Footer()
+        with TabbedContent():
+            with TabPane("Notes"):
+                yield VerticalScroll(
+                    Markdown("# This is a test.", id="testid")
+                )
+            with TabPane("Editor"):
+                yield VerticalScroll(
+                    NoteEditorWidget()
+                )
+
+
 class PF2eCharacterSheet(App):
 
     CSS_PATH = "styling/hello_world.tcss"
@@ -57,13 +77,15 @@ class PF2eCharacterSheet(App):
         ("f1", "switch_mode('stats_screen')", "Statistics"),
         ("f2", "switch_mode('combat_screen')", "Combat"),
         ("f3", "switch_mode('feats_screen')", "Feats"),
+        ("f4", "switch_mode('notes_screen')", "Notes"),
         ("ctrl+r", "refresh", "Refresh"),
         ("ctrl+q", "quit", "Quit"),
     ]
     MODES = {
         "stats_screen": StatsScreen,
         "combat_screen": CombatScreen,
-        "feats_screen": FeatsScreen
+        "feats_screen": FeatsScreen,
+        "notes_screen": NotesScreen,
     }
 
     TITLE = "PF2E Character Sheet"

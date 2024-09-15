@@ -10,6 +10,11 @@ CombatScreen {
     grid-gutter: 1 0;
 }
 
+ToastRack {
+    align: right top;
+    width: 60%;
+}
+
 #stats {
     row-span: 2;
     column-span: 1;
