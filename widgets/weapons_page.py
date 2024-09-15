@@ -1,14 +1,16 @@
+from typing import Iterable
+
 from rich.text import Text
 from textual.containers import Container, VerticalScroll
 from textual.widget import Widget
-from textual.widgets import Static, TabbedContent, TabPane, TextArea, Rule, Markdown
+from textual.widgets import (Markdown, Rule, Static, TabbedContent, TabPane,
+                             TextArea)
 
-from widgets.data import cs
-from widgets.shared import TableWidget, fix_number, prof_map, attack_map
 from rules.helpers import format_keywords
 from rules.weapons import Weapon
+from widgets.data import cs
+from widgets.shared import TableWidget, attack_map, fix_number, prof_map
 
-from typing import Iterable
 
 class ArmorDataWidget(TableWidget):
 
@@ -133,20 +135,19 @@ class WeaponsWidget(Widget):
             ])
 
         return Text().join(text)
-    
+
     def build_keywords(self, weapon: Weapon):
         label = Text('  Keywords: ', style="bold")
         keywords = Text(', '.join(format_keywords(weapon.keywords)))
         return Text().join((label, keywords))
-    
+
     def build_source(self, weapon: Weapon):
         text = [
-            
+
             Text('  Source: ', style="bold"),
             Text(weapon.source),
         ]
         return Text().join(text)
-    
+
     def label_attacks(self, attacks: Iterable[str]) -> Iterable[str]:
         return [f"{attack_map[i]} {v}" for i, v in enumerate(attacks)]
-            

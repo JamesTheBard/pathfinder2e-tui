@@ -1,8 +1,8 @@
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
+from typing import Optional
 
 from rules.helpers import fix_number
-from typing import Optional
 
 
 @dataclass
