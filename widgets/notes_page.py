@@ -1,12 +1,10 @@
-from typing import Coroutine
-from textual.events import Event
-from textual.widgets import TextArea, Markdown
-from textual.widget import Widget
-from textual import on
-
 import webbrowser
-
 from pathlib import Path
+
+from textual import on
+from textual.events import Event
+from textual.widget import Widget
+from textual.widgets import Markdown, TextArea
 
 
 class NoteEditorWidget(TextArea):
@@ -19,7 +17,7 @@ class NoteEditorWidget(TextArea):
         super().__init__(**kwargs)
         self.savefile = savefile
         self.load_from_file(self.savefile)
-        
+
     def load_from_file(self, filename: str | Path):
         filename = Path(filename)
         try:
@@ -45,7 +43,7 @@ class NotesMarkdown(Markdown):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-    
+
     @on(Markdown.LinkClicked)
     def open_link(self, event: Markdown.LinkClicked):
         webbrowser.open(event.href, autoraise=False)

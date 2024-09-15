@@ -1,13 +1,13 @@
-import math
-import yaml
-from rules.skills import SkillsMixin
-from rules.stats import StatsMixin, SavesMixin, NamesMixin, HitPointsMixin
-from rules.armor import ArmorMixin
-from rules.weapons import WeaponsMixin
 from pathlib import Path
 from typing import Optional
 
+import yaml
 from box import Box
+
+from rules.armor import ArmorMixin
+from rules.skills import SkillsMixin
+from rules.stats import HitPointsMixin, NamesMixin, SavesMixin, StatsMixin
+from rules.weapons import WeaponsMixin
 
 
 class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesMixin, ArmorMixin, WeaponsMixin):
@@ -60,7 +60,7 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         if prof_level not in bonus_map.keys() or prof_level == "untrained":
             return bonus_map[prof_level]
         return bonus_map[prof_level] + self.level
-    
+
     def process_keywords(self, keywords: str | list | tuple) -> list:
         if isinstance(keywords, str):
             keywords = [i.strip() for i in keywords.split(',')]

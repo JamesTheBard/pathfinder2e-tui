@@ -1,14 +1,14 @@
 from textual.app import App, ComposeResult
-from textual.screen import Screen
-from textual.widgets import Footer, Header, Static, TabbedContent, TabPane, Markdown, TextArea
 from textual.containers import VerticalScroll
+from textual.screen import Screen
+from textual.widgets import Footer, Header, Static, TabbedContent, TabPane
 
 from widgets.data import cs
-from widgets.stats_page import SavesWidget, SkillsWidget, StatsWidget, NameWidget, HitPointWidget
-from widgets.weapons_page import ArmorWidget, ShieldWidget, NotesWidget, WeaponsWidget
 from widgets.notes_page import NoteEditorWidget, NotesMarkdown
-
-from widgets.data import cs
+from widgets.stats_page import (HitPointWidget, NameWidget, SavesWidget,
+                                SkillsWidget, StatsWidget)
+from widgets.weapons_page import (ArmorWidget, NotesWidget, ShieldWidget,
+                                  WeaponsWidget)
 
 
 class CombatScreen(Screen):
@@ -18,7 +18,6 @@ class CombatScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header()
         yield ArmorWidget(id="armor", classes="refreshable")
-        # yield Placeholder("Weapons go here", id="weapon")
         yield WeaponsWidget(id="weapon", classes="refreshable")
         yield ShieldWidget(id="shield", classes="refreshable")
         yield NotesWidget(id="notes")
@@ -33,9 +32,7 @@ class StatsScreen(Screen):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        # yield Static(self.test, id="character-info")
         yield NameWidget(id="character-info")
-        # yield Static("HP stuff goes here", id="hp-stuff")
         yield HitPointWidget(id="hp-stuff")
         yield StatsWidget(id="stats", classes="refreshable")
         yield SkillsWidget(id="skills", classes="refreshable")

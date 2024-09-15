@@ -2,10 +2,8 @@ from textual.app import ComposeResult
 from textual.widget import Widget
 from textual.widgets import DataTable
 
-from widgets.data import cs
 
-
-def fix_number(number: int, ignore_zero=False, pad_left: int=None) -> str:
+def fix_number(number: int, ignore_zero=False, pad_left: int = None) -> str:
     result = str()
     if number == 0 and not ignore_zero:
         result = '0'
@@ -14,7 +12,7 @@ def fix_number(number: int, ignore_zero=False, pad_left: int=None) -> str:
 
     if pad_left != None:
         result = f"{result:>{pad_left}}"
-    
+
     return result
 
 

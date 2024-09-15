@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 from typing import Iterator
+
 from rich.text import Text
 
-from rules.data import armor_penalty, skill_list, stats_shorthand, prof_map
+from rules.data import armor_penalty, prof_map, skill_list, stats_shorthand
 from rules.helpers import fix_number
 
 skill_headers = ("Skill", "Total", "Stat", "Mod", "Prof", "Misc", "Penalty")

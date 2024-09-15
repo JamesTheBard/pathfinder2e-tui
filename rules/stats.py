@@ -1,9 +1,10 @@
+import math
 from dataclasses import dataclass
 from typing import Iterator, Optional
-from rich.text import Text
-import math
 
-from rules.data import stats_shorthand, saves_list, prof_map
+from rich.text import Text
+
+from rules.data import prof_map, saves_list, stats_shorthand
 from rules.helpers import fix_number
 
 

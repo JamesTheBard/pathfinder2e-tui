@@ -1,10 +1,10 @@
 from rich.text import Text
+from textual.containers import Container, VerticalScroll
+from textual.widget import Widget
+from textual.widgets import Input, Label, Rule, Static
 
 from widgets.data import cs
 from widgets.shared import TableWidget, fix_number, prof_map
-from textual.widget import Widget
-from textual.widgets import Static, Input, Label, Rule
-from textual.containers import VerticalScroll, Container
 
 
 class StatsWidget(TableWidget):
