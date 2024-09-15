@@ -79,3 +79,17 @@ ToastRack {
     border: panel $accent;
     height: 100%;
 }
+
+#testhp {
+    border: none;
+    outline: none;
+    padding: 0 1;
+    height: 1;
+    width: 6;
+    display: block;
+}
+
+#hitpoints {
+    layout: horizontal;
+    height: auto;
+}

@@ -2,6 +2,8 @@ from textual.app import ComposeResult
 from textual.widget import Widget
 from textual.widgets import DataTable
 
+from widgets.data import cs
+
 
 def fix_number(number: int, ignore_zero=False, pad_left: int=None) -> str:
     result = str()
@@ -38,11 +40,17 @@ class TableWidget(Widget):
     def compose(self) -> ComposeResult:
         yield DataTable()
 
-    def on_mount(self):
+    def on_mount(self, clear: bool = False):
         table = self.query_one(DataTable)
+        if clear:
+            table.clear(True)
         table.add_columns(*self.header)
         table.show_header = True
         table.add_rows(self.content)
         table.zebra_stripes = True
         table.cursor_type = "row"
         table.show_cursor = False
+
+    def action_refresh(self):
+        self.content = self.format_data()
+        self.on_mount(clear=True)

@@ -4,7 +4,7 @@ from textual.widgets import Footer, Header, Static, TabbedContent, TabPane, Mark
 from textual.containers import VerticalScroll
 
 from widgets.data import cs
-from widgets.stats_page import SavesWidget, SkillsWidget, StatsWidget
+from widgets.stats_page import SavesWidget, SkillsWidget, StatsWidget, NameWidget, HitPointWidget
 from widgets.weapons_page import ArmorWidget, ShieldWidget, NotesWidget, WeaponsWidget
 from widgets.notes_page import NoteEditorWidget
 
@@ -17,10 +17,10 @@ class CombatScreen(Screen):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield ArmorWidget(id="armor")
+        yield ArmorWidget(id="armor", classes="refreshable")
         # yield Placeholder("Weapons go here", id="weapon")
-        yield WeaponsWidget(id="weapon")
-        yield ShieldWidget(id="shield")
+        yield WeaponsWidget(id="weapon", classes="refreshable")
+        yield ShieldWidget(id="shield", classes="refreshable")
         yield NotesWidget(id="notes")
         yield Footer()
 
@@ -33,11 +33,13 @@ class StatsScreen(Screen):
 
     def compose(self) -> ComposeResult:
         yield Header()
-        yield Static(self.test, id="character-info")
-        yield Static("HP stuff goes here", id="hp-stuff")
-        yield StatsWidget(id="stats")
-        yield SkillsWidget(id="skills")
-        yield SavesWidget(id="saves")
+        # yield Static(self.test, id="character-info")
+        yield NameWidget(id="character-info")
+        # yield Static("HP stuff goes here", id="hp-stuff")
+        yield HitPointWidget(id="hp-stuff")
+        yield StatsWidget(id="stats", classes="refreshable")
+        yield SkillsWidget(id="skills", classes="refreshable")
+        yield SavesWidget(id="saves", classes="refreshable")
         yield Footer()
 
 
@@ -78,7 +80,7 @@ class PF2eCharacterSheet(App):
         ("f2", "switch_mode('combat_screen')", "Combat"),
         ("f3", "switch_mode('feats_screen')", "Feats"),
         ("f4", "switch_mode('notes_screen')", "Notes"),
-        ("ctrl+r", "refresh", "Refresh"),
+        ("ctrl+r", "refresh", "Reload"),
         ("ctrl+q", "quit", "Quit"),
     ]
     MODES = {
@@ -98,6 +100,9 @@ class PF2eCharacterSheet(App):
 
     def action_refresh(self) -> None:
         cs.refresh()
+        widgets = self.query(".refreshable")
+        for w in widgets:
+            w.action_refresh()
 
 
 if __name__ == "__main__":

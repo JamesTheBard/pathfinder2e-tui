@@ -1,7 +1,7 @@
 import math
 import yaml
 from rules.skills import SkillsMixin
-from rules.stats import StatsMixin, SavesMixin
+from rules.stats import StatsMixin, SavesMixin, NamesMixin, HitPointsMixin
 from rules.armor import ArmorMixin
 from rules.weapons import WeaponsMixin
 from pathlib import Path
@@ -10,7 +10,7 @@ from typing import Optional
 from box import Box
 
 
-class CharacterSheet(SkillsMixin, StatsMixin, SavesMixin, ArmorMixin, WeaponsMixin):
+class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesMixin, ArmorMixin, WeaponsMixin):
 
     def __init__(self) -> None:
         super().__init__()
@@ -22,11 +22,14 @@ class CharacterSheet(SkillsMixin, StatsMixin, SavesMixin, ArmorMixin, WeaponsMix
         self.level = sum(int(i.split(' ')[-1])
                          for i in self.data.character.classes)
         self.stats = self.process_stats()
+        self.hp = self.process_hit_points()
         self.armor = self.get_armor()
         self.shield = self.get_shield()
         self.skills = self.process_skills()
         self.saves = self.process_saves()
         self.weapons = self.process_weapons()
+        self.character = self.process_names()
+        self.current_hp = self.hp.total
 
     def load_file_as_text(self, filename: Path | str, attrib: str):
         try:
@@ -36,7 +39,9 @@ class CharacterSheet(SkillsMixin, StatsMixin, SavesMixin, ArmorMixin, WeaponsMix
             setattr(self, attrib, "")
 
     def refresh(self):
+        current_hp = self.current_hp
         self.load_character_sheet(self.yaml_file)
+        self.current_hp = current_hp
 
     def get_proficiency(self, prof_level: Optional[str] = "untrained"):
         bonus_map = {

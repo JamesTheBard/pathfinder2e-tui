@@ -2,8 +2,21 @@
 character:
   name: Kurosuke Ayame
   player: Jason Weatherly
+  ancestry: human
+  heritage: versatile
+  background: aspiring river monarch
+  diety: shizuru
+  languages:
+    - common
+    - minkaian
   classes:
     - Cleric 4
+hit_points:
+  class: 8
+  toughness: false
+  ancestry: 8
+  fast_recovery: false
+  misc: 0
 stats:
   strength: 10
   dexterity: 12

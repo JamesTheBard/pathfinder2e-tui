@@ -72,6 +72,9 @@ class ShieldWidget(Widget):
             VerticalScroll(ShieldDataWidget(id="shielddata")),
         )
 
+    def action_refresh(self):
+        self.refresh(recompose=True)
+
 
 class ArmorWidget(Widget):
 
@@ -85,6 +88,9 @@ class ArmorWidget(Widget):
             VerticalScroll(ArmorDataWidget(id="armordata"))
         )
 
+    def action_refresh(self):
+        self.refresh(recompose=True)
+
 
 class NotesWidget(TextArea):
 
@@ -94,11 +100,23 @@ class NotesWidget(TextArea):
         self.border_title = "Notes"
 
 
+class WeaponStatic(Static):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def action_refresh(self):
+        self.update(self.format_data())
+
+
 class WeaponsWidget(Widget):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.border_title = "Weapons and Attacks"
+
+    def action_refresh(self):
+        self.refresh(recompose=True)
 
     def compose(self):
         with TabbedContent():

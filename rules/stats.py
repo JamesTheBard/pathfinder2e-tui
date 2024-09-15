@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Iterator
+from typing import Iterator, Optional
 from rich.text import Text
 import math
 
@@ -20,8 +20,8 @@ class Stats:
     def data(self) -> Iterator[tuple[str, int, int]]:
         for stat in stats_shorthand.keys():
             yield (
-                stat.title(), 
-                getattr(self, stat), 
+                stat.title(),
+                getattr(self, stat),
                 self.get_modifier(stat)
             )
 
@@ -99,3 +99,79 @@ class SavesMixin:
             result.proficiency = data.get("proficiency", "untrained")
 
             yield result
+
+
+@dataclass
+class Names:
+    name: str
+    player: str
+    ancestry: str
+    heritage: str
+    background: str
+    languages: list
+    classes: list
+    diety: Optional[str] = None
+
+
+class NamesMixin:
+
+    def process_names(self):
+        data = self.data.character
+        results = Names(
+            name=data.name,
+            player=data.player,
+            ancestry=data.ancestry,
+            heritage=data.heritage,
+            background=data.background,
+            languages=data.languages,
+            classes=data.classes,
+        )
+
+        optional = ["diety"]
+        for i in optional:
+            try:
+                setattr(results, i, data[i])
+            except KeyError:
+                pass
+
+        return results
+
+
+@dataclass
+class HitPoints:
+    class_hp: int
+    ancestry_hp: int
+    toughness: bool = False
+    fast_recovery: bool = False
+    misc: int = 0
+    level: int = 0
+    constitution: int = 0
+
+    @property
+    def total(self):
+        return (self.class_hp + self.constitution + self.toughness) * self.level + self.ancestry_hp + self.misc
+
+    @property
+    def rest(self):
+        return max(self.constitution, 1) * self.level * (self.fast_recovery + 1)
+
+
+class HitPointsMixin:
+
+    def process_hit_points(self) -> HitPoints:
+        data = self.data.hit_points
+        results = HitPoints(
+            class_hp=data["class"],
+            ancestry_hp=data.ancestry,
+            level=self.level,
+            constitution=self.stats.get_modifier("constitution"),
+        )
+
+        optional = ["toughness", "ancestry", "misc"]
+        for i in optional:
+            try:
+                setattr(results, i, data[i])
+            except KeyError:
+                pass
+
+        return results
