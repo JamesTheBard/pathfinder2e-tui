@@ -108,6 +108,5 @@ class PF2eCharacterSheet(App):
 if __name__ == "__main__":
     cs.load_character_sheet('characters/info.yaml')
     cs.load_file_as_text('characters/feats.md', "feats")
-    cs.load_file_as_text('characters/notes.txt', "notes")
     app = PF2eCharacterSheet()
     app.run()
