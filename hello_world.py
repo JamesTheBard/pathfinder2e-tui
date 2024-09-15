@@ -6,7 +6,7 @@ from textual.containers import VerticalScroll
 from widgets.data import cs
 from widgets.stats_page import SavesWidget, SkillsWidget, StatsWidget, NameWidget, HitPointWidget
 from widgets.weapons_page import ArmorWidget, ShieldWidget, NotesWidget, WeaponsWidget
-from widgets.notes_page import NoteEditorWidget
+from widgets.notes_page import NoteEditorWidget, NotesMarkdown
 
 from widgets.data import cs
 
@@ -63,7 +63,7 @@ class NotesScreen(Screen):
         with TabbedContent():
             with TabPane("Notes"):
                 yield VerticalScroll(
-                    Markdown("# This is a test.", id="notesdisplay")
+                    NotesMarkdown(id="notesdisplay")
                 )
             with TabPane("Editor"):
                 yield VerticalScroll(

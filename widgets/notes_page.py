@@ -1,5 +1,11 @@
+from typing import Coroutine
+from textual.events import Event
 from textual.widgets import TextArea, Markdown
 from textual.widget import Widget
+from textual import on
+
+import webbrowser
+
 from pathlib import Path
 
 
@@ -33,3 +39,13 @@ class NoteEditorWidget(TextArea):
     def action_save_content(self):
         self.save_to_file(self.savefile)
         self.notify("Notes saved.")
+
+
+class NotesMarkdown(Markdown):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    
+    @on(Markdown.LinkClicked)
+    def open_link(self, event: Markdown.LinkClicked):
+        webbrowser.open(event.href, autoraise=False)

@@ -34,6 +34,8 @@ saves:
   willpower:
     proficiency: expert
 skills:
+  athletics:
+    proficiency: trained
   deception:
     proficiency: trained
   diplomacy:
@@ -47,7 +49,7 @@ skills:
   religion:
     proficiency: trained
   society:
-    proficiency: expert
+    proficiency: trained
 armour:
   name: Unarmored
   proficiency: trained
