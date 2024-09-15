@@ -50,7 +50,7 @@ skills:
     proficiency: trained
   society:
     proficiency: trained
-armour:
+armor:
   name: Unarmored
   proficiency: trained
   equipped: True

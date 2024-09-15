@@ -61,8 +61,8 @@ class SkillsMixin:
         if skill.startswith("lore"):
             data["stat"] = "intelligence"
 
-        if data.get("check_penalty"):
-            if self.armor.strength > strength and (data.get("check_penalty", False) or skill in armor_penalty):
+        if self.armor.check_penalty:
+            if self.armor.strength > strength and skill in armor_penalty:
                 result.check_penalty = self.armor.check_penalty
             # if self.armor.dex_cap != None:
             #     dexterity = self.armor.dex_cap
