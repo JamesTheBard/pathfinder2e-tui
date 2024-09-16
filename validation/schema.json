@@ -163,6 +163,18 @@
             "additionalProperties": false
         },
         "saves": {
+            "$defs": {
+                "itemBonusSchema": {
+                    "description": "Bonus added from equipped item",
+                    "type": "number",
+                    "default": 0
+                },
+                "miscBonusSchema": {
+                    "description": "Bonus added from other sources",
+                    "type": "number",
+                    "default": 0
+                }
+            },
             "description": "The saves and perception of the character",
             "type": "object",
             "properties": {
@@ -174,14 +186,10 @@
                             "$ref": "#/$defs/profSchema"
                         },
                         "item_bonus": {
-                            "description": "Bonus added from equipped item",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/itemBonusSchema"
                         },
                         "misc_bonus": {
-                            "description": "Bonus added from other sources",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/miscBonusSchema"
                         }
                     },
                     "additionalProperties": false
@@ -194,14 +202,10 @@
                             "$ref": "#/$defs/profSchema"
                         },
                         "item_bonus": {
-                            "description": "Bonus added from equipped item",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/itemBonusSchema"
                         },
                         "misc_bonus": {
-                            "description": "Bonus added from other sources",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/miscBonusSchema"
                         }
                     },
                     "additionalProperties": false
@@ -214,14 +218,10 @@
                             "$ref": "#/$defs/profSchema"
                         },
                         "item_bonus": {
-                            "description": "Bonus added from equipped item",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/itemBonusSchema"
                         },
                         "misc_bonus": {
-                            "description": "Bonus added from other sources",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/miscBonusSchema"
                         }
                     },
                     "additionalProperties": false
@@ -234,14 +234,10 @@
                             "$ref": "#/$defs/profSchema"
                         },
                         "item_bonus": {
-                            "description": "Bonus added from equipped item",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/itemBonusSchema"
                         },
                         "misc_bonus": {
-                            "description": "Bonus added from other sources",
-                            "type": "number",
-                            "default": 0
+                            "$ref": "#/properties/saves/$defs/miscBonusSchema"
                         }
                     },
                     "additionalProperties": false
@@ -453,7 +449,10 @@
                         },
                         "actions": {
                             "description": "If not a standard attack, the action(s) of the attack",
-                            "type": ["string", "number"],
+                            "type": [
+                                "string",
+                                "number"
+                            ],
                             "enum": [
                                 "reaction",
                                 "free",
