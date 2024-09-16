@@ -1,5 +1,9 @@
 import re
 from typing import Iterable
+import jsonschema
+import json
+import yaml
+from pathlib import Path
 
 
 def fix_number(number: int, force_plus_sign=False) -> str:
@@ -16,3 +20,13 @@ def format_keywords(keywords: Iterable[str]) -> Iterable[str]:
             start, end = match.span(0)
             k = k[:start] + k[start:end].lower() + k[end:]
         yield k
+
+
+class Validator:
+
+    def __init__(self):
+        self.schema_file = Path("validation/schema.json")
+        self.schema = json.load(self.schema_file.open())
+
+    def validate(self, content):
+        jsonschema.validate(content, self.schema)

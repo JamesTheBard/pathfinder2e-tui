@@ -14,7 +14,7 @@ character:
 hit_points:
   class: 8
   ancestry: 8
-  misc: 0
+  misc: 10
 stats:
   strength: 10
   dexterity: 12

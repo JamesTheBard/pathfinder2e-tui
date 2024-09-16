@@ -1,13 +1,14 @@
-import webbrowser
 from pathlib import Path
 
-from textual import on
-from textual.events import Event
-from textual.widget import Widget
-from textual.widgets import MarkdownViewer, Markdown, TextArea
+import jsonschema
+import jsonschema.exceptions
+import yaml
+from textual.widgets import TextArea
+
+from rules.helpers import Validator
 
 
-class NoteEditorWidget(TextArea):
+class DataEditorWidget(TextArea):
 
     BINDINGS = [
         ("ctrl+s", "save_content", "Save"),
@@ -17,7 +18,7 @@ class NoteEditorWidget(TextArea):
         super().__init__(**kwargs)
         self.savefile = savefile
         self.load_from_file(self.savefile)
-        self.language = "markdown"
+        self.language = "yaml"
         self.show_line_numbers = True
 
     def load_from_file(self, filename: str | Path):
@@ -29,24 +30,20 @@ class NoteEditorWidget(TextArea):
             self.text = "Notes go here!"
 
     def save_to_file(self, filename: str | Path):
+        try:
+            content = yaml.safe_load(self.text)
+            self.validate(content)
+        except jsonschema.exceptions.ValidationError as e:
+            self.notify(f"Validation Error at '{'/'.join(e.path)}': {e.message}", severity="error")
+            return
+
         filename = Path(filename)
         filename.write_text(self.text)
-
-    def on_text_area_changed(self, event: TextArea.Changed):
-        markdown: MarkdownViewer = self.app.query_exactly_one("#notesdisplay")
-        m = markdown.query_exactly_one(Markdown)
-        m.update(self.text)
+        self.notify("Character sheet saved!")
 
     def action_save_content(self):
         self.save_to_file(self.savefile)
-        self.notify("Notes saved.")
 
-
-class NotesMarkdown(MarkdownViewer):
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-    @on(Markdown.LinkClicked)
-    def open_link(self, event: Markdown.LinkClicked):
-        webbrowser.open(event.href, autoraise=False)
+    def validate(self, content):
+        v = Validator()
+        v.validate(content)

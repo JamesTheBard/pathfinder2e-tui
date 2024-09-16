@@ -9,6 +9,7 @@ from widgets.stats_page import (HitPointWidget, NameWidget, SavesWidget,
                                 SkillsWidget, StatsWidget)
 from widgets.weapons_page import (ArmorWidget, NotesWidget, ShieldWidget,
                                   WeaponsWidget)
+from widgets.data_page import DataEditorWidget
 
 
 class CombatScreen(Screen):
@@ -68,6 +69,17 @@ class NotesScreen(Screen):
                 )
 
 
+class DataScreen(Screen):
+
+    SUB_TITLE = "Character Data"
+
+    def compose(self) -> ComposeResult:
+        yield Header()
+        yield Footer()
+        yield DataEditorWidget(savefile="characters/info.yaml")
+        
+
+
 class PF2eCharacterSheet(App):
 
     CSS_PATH = "styling/hello_world.tcss"
@@ -75,16 +87,16 @@ class PF2eCharacterSheet(App):
     BINDINGS = [
         ("f1", "switch_mode('stats_screen')", "Statistics"),
         ("f2", "switch_mode('combat_screen')", "Combat"),
-        ("f3", "switch_mode('feats_screen')", "Feats"),
-        ("f4", "switch_mode('notes_screen')", "Notes"),
+        ("f3", "switch_mode('notes_screen')", "Notes"),
+        ("f4", "switch_mode('data_screen')", "Data"),
         ("ctrl+r", "refresh", "Reload"),
         ("ctrl+q", "quit", "Quit"),
     ]
     MODES = {
         "stats_screen": StatsScreen,
         "combat_screen": CombatScreen,
-        "feats_screen": FeatsScreen,
         "notes_screen": NotesScreen,
+        "data_screen": DataScreen
     }
 
     TITLE = "PF2E Character Sheet"
