@@ -14,6 +14,10 @@ class Weapon:
     proficiency_bonus: int = 0
     potency: int = 0
     attack_bonus: int = 0
+    attack_stat: Optional[str] = None
+    attack_stat_mod: int = 0
+    damage_stat: Optional[str] = None
+    damage_stat_mod: int = 0
     damage_bonus: int = 0
     strength: int = 0
     dexterity: int = 0
@@ -24,14 +28,19 @@ class Weapon:
     weapon_type: str = "melee"
     source: str = "Unknown"
     notes: Optional[str] = None
+    actions: Optional[str] = None
 
     @property
     def get_damage(self):
         damage_bonus = self.damage_bonus
-        if "propulsive" in self.keywords:
-            damage_bonus += math.floor(self.strength / 2)
-        if self.weapon_type == "melee":
-            damage_bonus += self.strength
+
+        if self.damage_stat:
+            damage_bonus += self.damage_stat_mod
+        else:
+            if "propulsive" in self.keywords:
+                damage_bonus += math.floor(self.strength / 2)
+            if self.weapon_type == "melee":
+                damage_bonus += self.strength
 
         dice_number = self.damage_die_quantity + self.striking
 
@@ -41,7 +50,9 @@ class Weapon:
     def get_attacks(self):
         attack_bonus = self.attack_bonus + self.potency + self.proficiency_bonus
 
-        if "finesse" in self.keywords:
+        if self.attack_stat != None:
+            attack_bonus += self.attack_stat_mod
+        elif "finesse" in self.keywords:
             attack_bonus += max(self.dexterity, self.strength)
         elif self.weapon_type == "ranged":
             attack_bonus += self.dexterity
@@ -63,4 +74,13 @@ class WeaponsMixin:
             result.strength = self.stats.get_modifier("strength")
             result.dexterity = self.stats.get_modifier("dexterity")
             result.proficiency_bonus = self.get_proficiency(result.proficiency)
+            if result.attack_stat:
+                result.attack_stat_mod = self.stats.get_modifier(result.attack_stat)
+            
+            if result.damage_stat:
+                result.damage_stat_mod = self.stats.get_modifier(result.damage_stat)
+
+            if result.actions != None:
+                result.actions = str(result.actions)
+
             yield result

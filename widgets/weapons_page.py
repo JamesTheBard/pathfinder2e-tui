@@ -9,7 +9,7 @@ from textual.widgets import (Markdown, Rule, Static, TabbedContent, TabPane,
 from rules.helpers import format_keywords
 from rules.weapons import Weapon
 from widgets.data import cs
-from widgets.shared import TableWidget, attack_map, fix_number, prof_map
+from widgets.shared import TableWidget, attack_map, fix_number, prof_map, action_map
 
 
 class ArmorDataWidget(TableWidget):
@@ -133,24 +133,38 @@ class WeaponsWidget(Widget):
     def build_attacks(self, weapon: Weapon):
         text = [
             Text(f"{prof_map[weapon.proficiency]} Attacks: ", style="bold"),
-            Text(' ' + ', '.join(self.label_attacks(weapon.get_attacks)) + ' ', style="on #303030"),
+            Text(' ' + '/'.join(weapon.get_attacks) + ' ', style="on #303030"),
             Text("  "),
             Text("Damage: ", style="bold "),
             Text(f" {weapon.get_damage} ", style="on #303030"),
             Text("  "),
             Text(f"Type: ", style="bold"),
-            Text(f" {weapon.weapon_type.title()} \n", style="on #303030"),
-            Text('  Damage Type: ', style="bold"),
-            Text(f" {weapon.damage_type} ", style="on #303030"),
+            Text(f" {weapon.weapon_type.title()} ", style="on #303030"),
         ]
 
-        if weapon.weapon_type.casefold() in ["melee", "ranged"]:
+        if weapon.actions:
             text.extend([
-                Text('  Potency: ', style="bold"),
-                Text(f" {weapon.potency} ", style="on #303030"),
-                Text('  Striking: ', style="bold"),
-                Text(f" {weapon.striking} ", style="on #303030"),
+                Text("  Actions: ", style="bold"),
+                Text(action_map[weapon.actions], style="bold"),
             ])
+
+        text.extend([
+            Text("\n  Damage Type: ", style="bold"),
+            Text(f" {weapon.damage_type} ", style="on #303030"),
+        ])
+
+        if weapon.weapon_type.casefold() in ["melee", "ranged"]:
+            if weapon.potency:
+                text.extend([
+                    Text('  Potency: ', style="bold"),
+                    Text(f" {weapon.potency} ", style="on #303030"),
+                ])
+
+            if weapon.striking:
+                text.extend([
+                    Text('  Striking: ', style="bold"),
+                    Text(f" {weapon.striking} ", style="on #303030"),
+                ])
 
         return Text().join(text)
 

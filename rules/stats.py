@@ -1,6 +1,7 @@
 import math
 from dataclasses import dataclass
 from typing import Iterator, Optional
+from box.exceptions import BoxKeyError
 
 from rich.text import Text
 
@@ -88,7 +89,11 @@ class SavesMixin:
         #     dexterity = self.armor.dex_cap
 
         for save, stat in saves_list.items():
-            data = self.data.saves.get(save, dict())
+            try:
+                data = self.data.saves.get(save, dict())
+            except (AttributeError, BoxKeyError):
+                data = dict()
+
             data = data if data else dict()
 
             result = Save(name=save.title())

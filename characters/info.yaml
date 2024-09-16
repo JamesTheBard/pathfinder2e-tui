@@ -13,9 +13,7 @@ character:
   level: 4
 hit_points:
   class: 8
-  toughness: false
   ancestry: 8
-  fast_recovery: false
   misc: 0
 stats:
   strength: 10
@@ -88,8 +86,9 @@ weapons:
     notes: This short-bladed, single-edged sword is typically carried as part of a pair alongside a katana.
   spiritual_armament:
     weapon_type: spell
+    actions: 1
     proficiency: trained
-    attack_bonus: 4
+    attack_stat: wisdom
     damage_type: spirit or slashing
     damage_die_size: 8
     damage_die_quantity: 2
@@ -103,8 +102,9 @@ weapons:
       **Heightened (+2)** The damage increases by 1d8.
   divine_lance:
     weapon_type: spell
+    actions: 2
     proficiency: trained
-    attack_bonus: 4
+    attack_stat: wisdom
     damage_type: spirit
     damage_die_size: 4
     damage_die_quantity: 3
@@ -116,8 +116,9 @@ weapons:
       **Heightened (+1)** The damage increases by 1d4.
   needle_darts:
     weapon_type: spell
+    actions: 2
     proficiency: trained
-    attack_bonus: 4
+    attack_stat: wisdom
     damage_type: piercing
     damage_die_size: 4
     damage_die_quantity: 4

@@ -1,0 +1,479 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Pathfinder Character Sheet",
+    "$defs": {
+        "profSchema": {
+            "description": "The character proficiency level",
+            "type": "string",
+            "enum": [
+                "untrained",
+                "trained",
+                "expert",
+                "master",
+                "legendary"
+            ],
+            "default": "untrained"
+        },
+        "keywordSchema": {
+            "description": "The associated keywords",
+            "type": [
+                "array",
+                "string"
+            ],
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "description": "A Pathfinder 2E character sheet.",
+    "type": "object",
+    "properties": {
+        "character": {
+            "description": "Character-specific information section",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of the character",
+                    "type": "string"
+                },
+                "player": {
+                    "description": "The name of the player",
+                    "type": "string"
+                },
+                "ancestry": {
+                    "description": "The ancestry of the character",
+                    "type": "string"
+                },
+                "heritage": {
+                    "description": "The heritage of the character",
+                    "type": "string"
+                },
+                "background": {
+                    "description": "The background of the character",
+                    "type": "string"
+                },
+                "diety": {
+                    "description": "The diety associated with the character",
+                    "type": "string"
+                },
+                "languages": {
+                    "description": "The languages the character can understand",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "class": {
+                    "description": "The class of the character",
+                    "type": "string"
+                },
+                "level": {
+                    "description": "The level of the character",
+                    "type": "number",
+                    "minimum": 1
+                }
+            },
+            "required": [
+                "name",
+                "player",
+                "ancestry",
+                "heritage",
+                "background",
+                "languages",
+                "class",
+                "level"
+            ],
+            "additionalProperties": false
+        },
+        "hit_points": {
+            "description": "Character vitals specifically hit-point related stuff",
+            "type": "object",
+            "properties": {
+                "class": {
+                    "description": "The number of hit points per level gained from the character class",
+                    "type": "number",
+                    "minimum": 1
+                },
+                "ancestry": {
+                    "description": "The number of hit points gained from the character's ancestry",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "toughness": {
+                    "description": "Does the character have the Toughness feat?",
+                    "type": "boolean",
+                    "default": false
+                },
+                "fast_recovery": {
+                    "description": "Does the character have the Fast Recovery feat?",
+                    "type": "boolean",
+                    "default": false
+                },
+                "misc": {
+                    "description": "The number of hit points gained from other sources",
+                    "type": "number",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "class",
+                "ancestry"
+            ],
+            "additionalProperties": false
+        },
+        "stats": {
+            "description": "The character's core stats (scores not values)",
+            "type": "object",
+            "properties": {
+                "strength": {
+                    "description": "The strength score of the character",
+                    "type": "number"
+                },
+                "dexterity": {
+                    "description": "The dexterity score of the character",
+                    "type": "number"
+                },
+                "constitution": {
+                    "description": "The constitution score of the character",
+                    "type": "number"
+                },
+                "intelligence": {
+                    "description": "The intelligence score of the character",
+                    "type": "number"
+                },
+                "wisdom": {
+                    "description": "The wisdom score of the character",
+                    "type": "number"
+                },
+                "charisma": {
+                    "description": "The charisma score of the character",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "strength",
+                "dexterity",
+                "constitution",
+                "intelligence",
+                "wisdom",
+                "charisma"
+            ],
+            "additionalProperties": false
+        },
+        "saves": {
+            "description": "The saves and perception of the character",
+            "type": "object",
+            "properties": {
+                "perception": {
+                    "description": "The perception of the character",
+                    "type": "object",
+                    "properties": {
+                        "proficiency": {
+                            "$ref": "#/$defs/profSchema"
+                        },
+                        "item_bonus": {
+                            "description": "Bonus added from equipped item",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "misc_bonus": {
+                            "description": "Bonus added from other sources",
+                            "type": "number",
+                            "default": 0
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "fortitude": {
+                    "description": "The fortitude save of the character",
+                    "type": "object",
+                    "properties": {
+                        "proficiency": {
+                            "$ref": "#/$defs/profSchema"
+                        },
+                        "item_bonus": {
+                            "description": "Bonus added from equipped item",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "misc_bonus": {
+                            "description": "Bonus added from other sources",
+                            "type": "number",
+                            "default": 0
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "reflex": {
+                    "description": "The reflex save of the character",
+                    "type": "object",
+                    "properties": {
+                        "proficiency": {
+                            "$ref": "#/$defs/profSchema"
+                        },
+                        "item_bonus": {
+                            "description": "Bonus added from equipped item",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "misc_bonus": {
+                            "description": "Bonus added from other sources",
+                            "type": "number",
+                            "default": 0
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "willpower": {
+                    "description": "The willpower save of the character",
+                    "type": "object",
+                    "properties": {
+                        "proficiency": {
+                            "$ref": "#/$defs/profSchema"
+                        },
+                        "item_bonus": {
+                            "description": "Bonus added from equipped item",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "misc_bonus": {
+                            "description": "Bonus added from other sources",
+                            "type": "number",
+                            "default": 0
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            }
+        },
+        "skills": {
+            "patternProperties": {
+                "^[a-zA-Z-_ :]+$": {
+                    "type": "object",
+                    "properties": {
+                        "proficiency": {
+                            "$ref": "#/$defs/profSchema"
+                        },
+                        "stat": {
+                            "description": "Override/Set the stat the skill uses for calcs.",
+                            "type": "string",
+                            "enum": [
+                                "strength",
+                                "dexterity",
+                                "constitution",
+                                "intelligence",
+                                "wisdom",
+                                "charisma"
+                            ]
+                        },
+                        "bonus": {
+                            "description": "The bonus to add to the skill",
+                            "type": "number"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "armor": {
+            "description": "The current armor the character is wearing",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "name": {
+                    "description": "The name of the armor",
+                    "type": "string",
+                    "default": "Unarmored"
+                },
+                "proficiency": {
+                    "$ref": "#/$defs/profSchema"
+                },
+                "keywords": {
+                    "$ref": "#/$defs/keywordSchema"
+                },
+                "ac_bonus": {
+                    "description": "The AC bonus afforded by the armor",
+                    "type": "number",
+                    "default": 0
+                },
+                "strength": {
+                    "description": "The required strength modifier to properly use the armor",
+                    "type": "number"
+                },
+                "dex_cap": {
+                    "description": "The dexterity cap of the armor",
+                    "type": "number"
+                },
+                "check_penalty": {
+                    "description": "The armor check penalty associated with the armor",
+                    "type": "number"
+                },
+                "equipped": {
+                    "description": "Whether the armor is equipped or not",
+                    "type": "boolean",
+                    "default": true
+                },
+                "potency": {
+                    "description": "The bonus of the potency rune on the armor",
+                    "type": "number",
+                    "default": 0
+                }
+            }
+        },
+        "shield": {
+            "description": "The current equipped shield",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "name": {
+                    "description": "The type of shield",
+                    "type": "string"
+                },
+                "bonus": {
+                    "description": "The AC bonus of the shield when raised",
+                    "type": "number"
+                },
+                "hardness": {
+                    "description": "The hardness of the shield",
+                    "type": "number",
+                    "minimum": 1
+                },
+                "total_hp": {
+                    "description": "The total number of HP the shield has",
+                    "type": "number",
+                    "minimum": 2
+                }
+            },
+            "required": [
+                "name",
+                "bonus",
+                "hardness",
+                "total_hp"
+            ],
+            "additionalProperties": false
+        },
+        "weapons": {
+            "patternProperties": {
+                "^[a-zA-Z-_ :]+$": {
+                    "description": "The weapon/attack name",
+                    "type": "object",
+                    "properties": {
+                        "proficiency": {
+                            "$ref": "#/$defs/profSchema"
+                        },
+                        "keywords": {
+                            "$ref": "#/$defs/keywordSchema"
+                        },
+                        "weapon_type": {
+                            "description": "The type of weapon",
+                            "type": "string",
+                            "enum": [
+                                "melee",
+                                "ranged",
+                                "spell"
+                            ],
+                            "default": "melee"
+                        },
+                        "potency": {
+                            "description": "The potency bonus from the potency rune",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "attack_bonus": {
+                            "description": "The bonus from items/misc to the attack rolls",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "attack_stat": {
+                            "description": "Override the attack stat used to calculate attacks",
+                            "type": "string",
+                            "enum": [
+                                "strength",
+                                "dexterity",
+                                "constitution",
+                                "intelligence",
+                                "wisdom",
+                                "charisma"
+                            ]
+                        },
+                        "damage_stat": {
+                            "description": "Override the damage bonus stat used to calculate attacks",
+                            "type": "string",
+                            "enum": [
+                                "strength",
+                                "dexterity",
+                                "constitution",
+                                "intelligence",
+                                "wisdom",
+                                "charisma"
+                            ]
+                        },
+                        "damage_bonus": {
+                            "description": "the bonus from items/misc to the damage rolls",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "damage_type": {
+                            "description": "The weapon damage type(s)",
+                            "type": "string"
+                        },
+                        "damage_die_size": {
+                            "description": "The die size of the weapon",
+                            "type": "number"
+                        },
+                        "damage_die_quantity": {
+                            "description": "The number of dice to roll for damage",
+                            "type": "number",
+                            "default": 1
+                        },
+                        "striking": {
+                            "description": "The number of additional dice added to the weapons damage from the striking rune",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "ammo": {
+                            "description": "The quantity of ammo associated with the weapon",
+                            "type": "number",
+                            "default": 0
+                        },
+                        "source": {
+                            "description": "The source of the information (e.g. Player Core, p.280)",
+                            "type": "string"
+                        },
+                        "notes": {
+                            "description": "Any associated notes with the weapon/attack",
+                            "type": "string"
+                        },
+                        "actions": {
+                            "description": "If not a standard attack, the action(s) of the attack",
+                            "type": ["string", "number"],
+                            "enum": [
+                                "reaction",
+                                "free",
+                                1,
+                                2,
+                                3
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "character",
+        "hit_points",
+        "stats",
+        "armor",
+        "weapons"
+    ]
+}

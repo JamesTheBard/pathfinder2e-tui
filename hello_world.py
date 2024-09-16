@@ -100,6 +100,7 @@ class PF2eCharacterSheet(App):
         widgets = self.query(".refreshable")
         for w in widgets:
             w.action_refresh()
+        self.notify("Character sheet reloaded.")
 
 
 if __name__ == "__main__":

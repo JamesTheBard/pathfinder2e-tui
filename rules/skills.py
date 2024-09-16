@@ -44,9 +44,13 @@ class Skill:
 class SkillsMixin:
 
     def find_skill(self, skill):
-        for s, d in self.data.skills.items():
-            if s.casefold() == skill.casefold():
-                return d
+        try:
+            for s, d in self.data.skills.items():
+                if s.casefold() == skill.casefold():
+                    return d
+        except AttributeError:
+            pass
+
         return dict()
 
     def calculate_skill(self, skill: str) -> Skill:
@@ -77,7 +81,12 @@ class SkillsMixin:
         return result
 
     def process_skills(self) -> Iterator[Skill]:
-        defined_skills = [i.casefold() for i in self.data.skills.keys()]
+        try:
+            defined_skills = [i.casefold() for i in self.data.skills.keys()]
+        except AttributeError:
+            defined_skills = list()
+            
+
         skills = sorted(list(set(defined_skills).union(skill_list.keys())))
 
         for skill in skills:

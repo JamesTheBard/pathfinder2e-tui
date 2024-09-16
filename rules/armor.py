@@ -41,7 +41,8 @@ class ArmorMixin:
         if not armor_string:
             logging.fatal("Character sheet must have an armor/armour section!")
             sys.exit(2)
-        data = self.data.get(armor_string)
+        if not (data := self.data.get(armor_string)):
+            data = dict()
 
         dexterity = self.stats.get_modifier("dexterity")
         if (cap := data.get("dex_cap", None)) != None:
@@ -53,7 +54,7 @@ class ArmorMixin:
         keywords = self.process_keywords(keywords)
 
         return Armor(
-            name=data.get("name"),
+            name=data.get("name") if data.get("name") else "Unarmored",
             proficiency=data.get("proficiency", "untrained"),
             proficiency_bonus=self.get_proficiency(data.get("proficiency", "untrained")),
             keywords=list(keywords),

@@ -24,6 +24,15 @@ prof_map = {
     "legendary": "🅻",
 }
 
+
+action_map = {
+    "reaction": "🅁",
+    "free": "🄵",
+    "1": "➊",
+    "2": "➋",
+    "3": "➌",
+}
+
 attack_map = ["➀", "➁", "➂"]
 
 
