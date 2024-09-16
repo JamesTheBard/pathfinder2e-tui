@@ -49,4 +49,5 @@ class NotesMarkdown(MarkdownViewer):
 
     @on(Markdown.LinkClicked)
     def open_link(self, event: Markdown.LinkClicked):
+        event.prevent_default()
         webbrowser.open(event.href, autoraise=False)
