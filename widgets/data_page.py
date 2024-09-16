@@ -21,6 +21,8 @@ class DataEditorWidget(TextArea):
         self.load_from_file(self.savefile)
         self.language = "yaml"
         self.show_line_numbers = True
+        self.tab_behavior = "indent"
+        self.indent_width = 2
 
     def load_from_file(self, filename: str | Path):
         filename = Path(filename)

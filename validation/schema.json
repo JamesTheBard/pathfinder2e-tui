@@ -319,7 +319,8 @@
                     "type": "number",
                     "default": 0
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "shield": {
             "description": "The current equipped shield",
