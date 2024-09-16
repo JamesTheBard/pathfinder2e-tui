@@ -11,7 +11,7 @@ CombatScreen {
 }
 
 ToastRack {
-    align: right top;
+    align: right bottom;
     width: 60%;
 }
 

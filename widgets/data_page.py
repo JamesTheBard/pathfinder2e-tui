@@ -4,6 +4,7 @@ import jsonschema
 import jsonschema.exceptions
 import yaml
 from textual.widgets import TextArea
+from rich.text import Text
 
 from rules.helpers import Validator
 
@@ -34,7 +35,7 @@ class DataEditorWidget(TextArea):
             content = yaml.safe_load(self.text)
             self.validate(content)
         except jsonschema.exceptions.ValidationError as e:
-            self.notify(f"Validation Error at '{'/'.join(e.path)}': {e.message}", severity="error")
+            self.notify(e.message, title=f"Validation Error at '{'/'.join(e.path)}'!", severity="error")
             return
 
         filename = Path(filename)
