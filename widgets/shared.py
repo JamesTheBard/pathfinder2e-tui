@@ -1,7 +1,6 @@
 from textual.app import ComposeResult
 from textual.widget import Widget
 from textual.widgets import DataTable
-from rules.helpers import fix_number
 
 
 prof_map = {
