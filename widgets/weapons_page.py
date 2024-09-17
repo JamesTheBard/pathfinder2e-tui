@@ -13,6 +13,9 @@ from widgets.shared import TableWidget, attack_map, fix_number, prof_map, action
 
 
 class ArmorDataWidget(TableWidget):
+    """The Armor widget used to display all of the armor information
+    post character sheet calculations.
+    """
 
     def __init__(self, **kwargs) -> None:
         headers = ("", "Mod")

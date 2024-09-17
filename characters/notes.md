@@ -1,6 +1,6 @@
 # Campaign Notes
 
-## Loots
+## Loot
 
 ### Beginning of Thistletop
 

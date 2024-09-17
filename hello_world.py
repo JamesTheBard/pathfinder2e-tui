@@ -10,6 +10,7 @@ from widgets.stats_page import (HitPointWidget, NameWidget, SavesWidget,
 from widgets.weapons_page import (ArmorWidget, NotesWidget, ShieldWidget,
                                   WeaponsWidget)
 from widgets.data_page import DataEditorWidget
+from widgets.feats_page import FeatsEditorWidget, FeatsMarkdown
 
 
 class CombatScreen(Screen):
@@ -29,8 +30,6 @@ class StatsScreen(Screen):
 
     SUB_TITLE = "Statistics"
 
-    test = "Name: Kurosuke Ayame\nClass: Cleric 4"
-
     def compose(self) -> ComposeResult:
         yield Header()
         yield NameWidget(id="character-info")
@@ -38,16 +37,6 @@ class StatsScreen(Screen):
         yield StatsWidget(id="stats", classes="refreshable")
         yield SkillsWidget(id="skills", classes="refreshable")
         yield SavesWidget(id="saves", classes="refreshable")
-        yield Footer()
-
-
-class FeatsScreen(Screen):
-
-    SUB_TITLE = "Feats"
-
-    def compose(self) -> ComposeResult:
-        yield Header()
-        yield Static("This is a test.")
         yield Footer()
 
 
@@ -69,6 +58,24 @@ class NotesScreen(Screen):
                 )
 
 
+class FeatsScreen(Screen):
+
+    SUB_TITLE = "Feats and Spells"
+
+    def compose(self) -> ComposeResult:
+        yield Header()
+        yield Footer()
+        with TabbedContent():
+            with TabPane("Feats"):
+                yield VerticalScroll(
+                    FeatsMarkdown(id="featsdisplay")
+                )
+            with TabPane("Editor"):
+                yield VerticalScroll(
+                    FeatsEditorWidget(savefile="characters/feats.md")
+                )
+
+
 class DataScreen(Screen):
 
     SUB_TITLE = "Character Data"
@@ -79,7 +86,6 @@ class DataScreen(Screen):
         yield DataEditorWidget(savefile="characters/info.yaml")
         
 
-
 class PF2eCharacterSheet(App):
 
     CSS_PATH = "styling/hello_world.tcss"
@@ -88,7 +94,8 @@ class PF2eCharacterSheet(App):
         ("f1", "switch_mode('stats_screen')", "Statistics"),
         ("f2", "switch_mode('combat_screen')", "Combat"),
         ("f3", "switch_mode('notes_screen')", "Notes"),
-        ("f4", "switch_mode('data_screen')", "Data"),
+        ("f4", "switch_mode('feats_screen')", "Feats/Spells"),
+        ("f5", "switch_mode('data_screen')", "Data"),
         ("ctrl+r", "refresh", "Reload"),
         ("ctrl+q", "quit", "Quit"),
     ]
@@ -96,6 +103,7 @@ class PF2eCharacterSheet(App):
         "stats_screen": StatsScreen,
         "combat_screen": CombatScreen,
         "notes_screen": NotesScreen,
+        "feats_screen": FeatsScreen,
         "data_screen": DataScreen
     }
 
@@ -117,6 +125,5 @@ class PF2eCharacterSheet(App):
 
 if __name__ == "__main__":
     cs.load_character_sheet('characters/info.yaml')
-    cs.load_file_as_text('characters/feats.md', "feats")
     app = PF2eCharacterSheet()
     app.run()
