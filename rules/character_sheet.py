@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Iterator, Iterable, Optional
+from typing import Iterable, Generator
 
 import yaml
 from box import Box
@@ -24,26 +24,24 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         current_hp (int): The current HP total of the character
         data (Box): The raw, unprocessed data from the character info file
         hp (HitPoints): The HP information of the character
-        saves (Iterator[Save]): Save and Perception information
+        saves (Generator[Save, None, None]): Save and Perception information
         shield (Shield): Shield information of the character
-        skills (Iterator[Skill]): Skill information of the character
+        skills (Generator[Skill, None, None]): Skill information of the character
         stats (Stats): The statistics (e.g. "strength") of the character
-        weapons (Iterator[Weapon]): Weapon/attack information
+        weapons (Generator[Weapon, None, None]): Weapon/attack information
         yaml_file (Path): The character information file location
     """
 
     armor: Armor
-    character_class: int
-    character_level: int
     character: Names
     current_hp: int
     data: Box
     hp: HitPoints
-    saves: Iterator[Save]
+    saves: Generator[Save, None, None]
     shield: Shield
-    skills: Iterator[Skill]
+    skills: Generator[Skill, None, None]
     stats: Stats
-    weapons: Iterator[Weapon]
+    weapons: Generator[Weapon, None, None]
     yaml_file: Path
 
     def __init__(self) -> None:
@@ -58,8 +56,7 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         self.yaml_file = Path(yaml_file)
         with self.yaml_file.open('r') as f:
             self.data = Box(yaml.safe_load(f))
-        self.character_class = self.data.character["class"]
-        self.character_level = self.data.character.level
+        self.character = self.process_names()
         self.stats = self.process_stats()
         self.hp = self.process_hit_points()
         self.armor = self.get_armor()
@@ -67,7 +64,6 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         self.skills = self.process_skills()
         self.saves = self.process_saves()
         self.weapons = self.process_weapons()
-        self.character = self.process_names()
         self.current_hp = self.hp.total
 
     def load_file_as_text(self, filename: Path | str, attrib: str) -> None:
@@ -90,14 +86,14 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         self.load_character_sheet(self.yaml_file)
         self.current_hp = current_hp
 
-    def get_proficiency(self, prof_level: Optional[str] = "untrained") -> int:
+    def get_proficiency(self, proficiency: str = "untrained") -> int:
         """Calculate the proficiency modifier given a proficiency level (e.g. "trained")
 
         Args:
-            prof_level (str, optional): The proficiency level. Defaults to "untrained".
+            proficiency (str): The proficiency level. Defaults to "untrained".
 
         Returns:
-            int: The proficiency modifier
+            int: The modifier of the proficiency level
         """
 
         bonus_map = {
@@ -109,13 +105,13 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         }
 
         try:
-            bonus = bonus_map[prof_level]
+            bonus = bonus_map[proficiency]
         except:
             return 0
 
-        if prof_level not in bonus_map.keys() or prof_level == "untrained":
-            return bonus_map[prof_level]
-        return bonus_map[prof_level] + self.character_level
+        if proficiency not in bonus_map.keys() or proficiency == "untrained":
+            return bonus_map[proficiency]
+        return bonus_map[proficiency] + self.character.character_level
 
     def process_keywords(self, keywords: str | Iterable[str]) -> tuple[str]:
         """Process the keywords entry and convert it to a default format (tuple)

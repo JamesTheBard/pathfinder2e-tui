@@ -3,10 +3,11 @@ from textual.containers import Container, VerticalScroll
 from textual.widget import Widget
 from textual.widgets import Input, Label, Static
 
+from rules.helpers import fix_number
 from rules.skills import Skill
 from rules.stats import Save
 from widgets.data import cs
-from widgets.shared import TableWidget, fix_number, prof_map, stats_shorthand
+from widgets.shared import TableWidget, prof_map, stats_shorthand
 
 
 class StatsWidget(TableWidget):
@@ -95,7 +96,7 @@ class NameWidget(Widget):
             Text(" Name: ", style="bold"),
             Text(f" {cs.character.name} ", style="on #303030"),
             Text("  Class: ", style="bold"),
-            Text(f" {cs.character.classes.title()} ", style="on #303030"),
+            Text(f" {cs.character.character_class.title()} {cs.character.character_level} ", style="on #303030"),
         ]
         if cs.character.diety:
             text.extend([

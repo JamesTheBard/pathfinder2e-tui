@@ -1,14 +1,40 @@
 import math
 from dataclasses import dataclass
-from typing import Optional
+from typing import Generator, Iterable, Optional
 
 from rules.helpers import fix_number
 
 
 @dataclass
 class Weapon:
+    """A single weapon/attack generated from the character sheet info.
+
+    Attributes:
+        name (str): The name of the weapon/attack.
+        keywords (str | Iterable[str]): The keywords associated with the weapon/attack.
+        actions (str, optional): The number of actions the attack needs. Defaults to None.
+        ammo (int): The amount of ammo the weapon has. Defaults to 0.
+        attack_bonus (int): Any miscellaneous modifiers to the attack bonus. Defaults to 0.
+        attack_stat_mod (int): The modifier for the attack bonus. Defaults to 0.
+        attack_stat (str, optional): The statistic to use when calculating the attack modifiers. Defaults to None.
+        damage_bonus (int): Any miscellaneous modifiers to the attack damage. Defaults to 0.
+        damage_die_quantity (int): The number of dice to roll for damage for the base weapon. Defaults to 1.
+        damage_die_size (int): The number of faces each die has for damage. Defaults to 0.
+        damage_stat_mod (int): The modifier for the damage bonus. Defaults to 0.
+        damage_stat (int, optional): The statistic to use when calculating the damage. Defaults to None.
+        damage_type (str): The damage type(s) of the weapon/attack. Defaults to "slashing".
+        dexterity (int): The character's dexterity modifier. Defaults to 0.
+        notes (str, optional): Any notes associated with the weapon/attack formatted in Markdown. Default is None.
+        potency (int): The bonus added to attacks from potency runes. Defaults to 0.
+        proficiency_bonus (int): The proficiency bonus of the weapon/attack. Defaults to 0.
+        proficiency (str): The proficiency level of the weapon/attack. Defaults to "untrained".
+        source (str): The source of the weapon/attack information in PF2E source books. Defaults to "Unknown".
+        strength (int): The character's strength modifier. Defaults to 0.
+        striking (int): The number of dice added to the weapon damage due to striking runes. Defaults to 0.
+        weapon_type (str): The weapon/attack type (e.g. melee, spell). Defaults to "melee".
+    """
     name: str
-    keywords: list[str]
+    keywords: str | Iterable[str]
     actions: Optional[str] = None
     ammo: int = 0
     attack_bonus: int = 0
@@ -19,7 +45,7 @@ class Weapon:
     damage_die_size: int = 0
     damage_stat_mod: int = 0
     damage_stat: Optional[str] = None
-    damage_type: str = ""
+    damage_type: str = "slashing"
     dexterity: int = 0
     notes: Optional[str] = None
     potency: int = 0
@@ -31,7 +57,12 @@ class Weapon:
     weapon_type: str = "melee"
 
     @property
-    def get_damage(self):
+    def get_damage(self) -> str:
+        """Generate the damage dealt (e.g. 1d8+3) for the weapon on a successful attack.
+
+        Returns:
+            str: The damage string (e.g. 1d8+3).
+        """
         damage_bonus = self.damage_bonus
 
         if self.damage_stat:
@@ -47,7 +78,12 @@ class Weapon:
         return f"{dice_number}d{self.damage_die_size}{fix_number(damage_bonus, True)}"
 
     @property
-    def get_attacks(self):
+    def get_attacks(self) -> str:
+        """Generate the attack bonus progression for the weapon.
+
+        Returns:
+            str: The attack progression for the weapon (e.g. '+8/+3/-2')
+        """
         attack_bonus = self.attack_bonus + self.potency + self.proficiency_bonus
 
         if self.attack_stat != None:
@@ -66,7 +102,12 @@ class Weapon:
 
 class WeaponsMixin:
 
-    def process_weapons(self):
+    def process_weapons(self) -> Generator[Weapon, None, None]:
+        """Process all of the weapon/attack information in the PF2E character sheet.
+
+        Yields:
+            Generator[Weapon, None, None]: A generator with all the weapon/attack information.
+        """
         for weapon_name, data in self.data.weapons.items():
             result = Weapon(name=weapon_name.replace('_', ' ').title(), keywords=list())
             [setattr(result, key, value) for key, value in data.items()]

@@ -15,26 +15,26 @@ class Armor:
         ac_bonus (int): The AC bonus provided by the armor. Defaults to 0.
         bonus (int): The misc bonus to ac. Defaults to 0.
         check_penalty (int): The check penalty of the armor. Defaults to 0.
-        dex_cap (Optional[int]): The dexterity cap of the armor.
+        dex_cap (int): The dexterity cap of the armor.
         dexterity (int): The dexterity bonus for the character. Defaults to 0.
         equipped (bool): Whether the armor is equipped. Defaults to True.
         potency (int): The potency bonus for any runes equipped. Defaults to 0.
         proficiency_bonus (int): The proficiency bonus for the armor. Defaults to 0.
         proficiency (str): The proficiency for the armor. Defaults to "untrained".
-        strength (Optional[int]): The required strength to avoid the check penalty. Defaults to None.
+        strength (int, optional): The required strength to avoid the check penalty. Defaults to None.
     """
     name: str
     keywords: list[str] | str
     ac_bonus: int = 0
     bonus: int = 0
     check_penalty: int = 0
-    dex_cap: Optional[int] = None
+    dex_cap: int = None
     dexterity: int = 0
     equipped: bool = True
     potency: int = 0
     proficiency_bonus: int = 0
     proficiency: str = "untrained"
-    strength: Optional[int] = None
+    strength: int | None = None
 
     @property
     def total(self) -> int:

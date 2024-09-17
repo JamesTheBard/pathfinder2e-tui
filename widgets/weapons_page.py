@@ -6,10 +6,10 @@ from textual.widget import Widget
 from textual.widgets import (Markdown, Rule, Static, TabbedContent, TabPane,
                              TextArea)
 
-from rules.helpers import format_keywords
+from rules.helpers import fix_number, format_keywords
 from rules.weapons import Weapon
 from widgets.data import cs
-from widgets.shared import TableWidget, attack_map, fix_number, prof_map, action_map
+from widgets.shared import TableWidget, action_map, attack_map, prof_map
 
 
 class ArmorDataWidget(TableWidget):

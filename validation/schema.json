@@ -58,7 +58,7 @@
                 },
                 "languages": {
                     "description": "The languages the character can understand",
-                    "type": "array",
+                    "type": ["array", "string"],
                     "items": {
                         "type": "string"
                     },

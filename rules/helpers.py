@@ -1,7 +1,7 @@
 import json
 import re
 from pathlib import Path
-from typing import Iterable, Iterator
+from typing import Generator, Iterable
 
 import jsonschema
 import jsonschema.exceptions
@@ -23,7 +23,7 @@ def fix_number(number: int, force_plus_sign=False) -> str:
     return str(number) if number < 0 else f'+{number}'
 
 
-def format_keywords(keywords: Iterable[str]) -> Iterator[str]:
+def format_keywords(keywords: Iterable[str]) -> Generator[str, None, None]:
     """Fixes capitalization issues with keywords such as '1d8' so that it matches the
     formatting of the source books
 
