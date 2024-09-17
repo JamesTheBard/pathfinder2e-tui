@@ -1,5 +1,19 @@
 # Feats, Spells, and Actions
 
+## Quick Reference
+
+- Battle Medicine/Treat Wounds: Medicine check, DC 15, immune for an day
+- Treat Wounds removes _Wounded_ condition on success, immune for an hour
+- Spend an hour Treat Wounds, double HP restored
+- Heal (4/day): (1) 2d10, (2) 2d10+16, (3) 2d10
+
+| Proficiency | DC | Success | Critical | Failure |
+|:---:|:---:|:---:|:---:|:---:|
+| Trained | 15 | 2d8 | 4d8 | 1d8 |
+| Expert | 20 | 2d8+10 | 4d8+10 | 1d8 |
+| Master | 25 | 2d8+30 | 4d8+30 | 1d8 |
+| Legendary | 30 | 2d8+50 | 4d8+50 | 1d8 |
+
 ## Feats
 
 ### Shield Block (Heritage 1)
@@ -108,7 +122,7 @@ If the religious symbol you’re raising is a shield, such as with Emblazon Arma
 
 ### Disarming Block (Archetype 4)
 
-**Source**: [Advanced Player's Guile, p. 159](https://2e.aonprd.com/Feats.aspx?ID=1896)
+**Source**: [Advanced Player's Guide, p. 159](https://2e.aonprd.com/Feats.aspx?ID=1896)
 
 **Action** free action
 
