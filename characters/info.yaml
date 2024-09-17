@@ -55,7 +55,7 @@ armor:
 shield:
   name: Sturdy Shield
   bonus: 2
-  hardness: 8
+  hardness: 9
   total_hp: 64
 weapons:
   katana:

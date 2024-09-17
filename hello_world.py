@@ -93,8 +93,8 @@ class PF2eCharacterSheet(App):
     BINDINGS = [
         ("f1", "switch_mode('stats_screen')", "Statistics"),
         ("f2", "switch_mode('combat_screen')", "Combat"),
-        ("f3", "switch_mode('notes_screen')", "Notes"),
-        ("f4", "switch_mode('feats_screen')", "Feats/Spells"),
+        ("f3", "switch_mode('feats_screen')", "Feats/Spells"),
+        ("f4", "switch_mode('notes_screen')", "Notes"),
         ("f5", "switch_mode('data_screen')", "Data"),
         ("ctrl+r", "refresh", "Reload"),
         ("ctrl+q", "quit", "Quit"),

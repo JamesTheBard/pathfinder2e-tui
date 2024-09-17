@@ -116,6 +116,8 @@ class Names:
     background: str
     languages: list
     classes: list
+    speed: int = 25
+    speed_bonus: int = 0
     diety: Optional[str] = None
 
 
@@ -133,7 +135,7 @@ class NamesMixin:
             classes=f"{data["class"]} {data.level}",
         )
 
-        optional = ["diety"]
+        optional = ["diety", "speed", "speed_bonus"]
         for i in optional:
             try:
                 setattr(results, i, data[i])

@@ -110,9 +110,12 @@ class NameWidget(Widget):
 
     def build_languages(self):
         languages = [i.title() for i in cs.character.languages]
+        speed = cs.character.speed + cs.character.speed_bonus
         text = [
             Text(" Languages: ", style="bold"),
-            Text(f" {', '.join(languages)} ", style="on #303030")
+            Text(f" {', '.join(languages)} ", style="on #303030"),
+            Text("  Speed: ", style="bold"),
+            Text(f" {speed}' ", style="on #303030")
         ]
         return Text().join(text)
 

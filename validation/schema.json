@@ -73,6 +73,16 @@
                     "description": "The level of the character",
                     "type": "number",
                     "minimum": 1
+                },
+                "speed": {
+                    "description": "The speed of the character",
+                    "type": "number",
+                    "default": 25
+                },
+                "speed_bonus": {
+                    "description": "The bonuses to speed",
+                    "type": "number",
+                    "default": 0
                 }
             },
             "required": [
