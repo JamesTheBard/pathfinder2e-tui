@@ -32,24 +32,21 @@ class NoteEditorWidget(TextArea):
         filename = Path(filename)
         filename.write_text(self.text)
 
-    def on_text_area_changed(self, event: TextArea.Changed):
-        markdown: MarkdownViewer = self.app.query_exactly_one("#notesdisplay")
-        m = markdown.query_exactly_one(Markdown)
-        m.update(self.text)
+    def update_markdown(self, content):
+        mv: MarkdownViewer = self.app.query_exactly_one("#notesdisplay")
+        v: Markdown = mv.query_exactly_one(Markdown)
+        v.update(content)
 
     def action_save_content(self):
         self.save_to_file(self.savefile)
         self.notify("Notes saved.")
-        markdown: MarkdownViewer = self.app.query_exactly_one("#notesdisplay")
-        m = markdown.query_exactly_one(Markdown)
-        m.update(self.text)
-
+        self.update_markdown(self.text)
 
 
 class NotesMarkdown(MarkdownViewer):
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, savefile, **kwargs):
+        super().__init__(Path(savefile).read_text(), **kwargs)
 
     @on(Markdown.LinkClicked)
     def open_link(self, event: Markdown.LinkClicked):

@@ -50,7 +50,7 @@ class NotesScreen(Screen):
         with TabbedContent():
             with TabPane("Notes"):
                 yield VerticalScroll(
-                    NotesMarkdown(id="notesdisplay")
+                    NotesMarkdown(id="notesdisplay", savefile="characters/notes.md")
                 )
             with TabPane("Editor"):
                 yield VerticalScroll(
@@ -68,7 +68,7 @@ class FeatsScreen(Screen):
         with TabbedContent():
             with TabPane("Feats"):
                 yield VerticalScroll(
-                    FeatsMarkdown(id="featsdisplay")
+                    FeatsMarkdown(id="featsdisplay", savefile="characters/feats.md")
                 )
             with TabPane("Editor"):
                 yield VerticalScroll(
