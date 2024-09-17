@@ -2,9 +2,10 @@
 
 ## Quick Reference
 
+- Spell DC: 20, Spell Mod: +10 (Trained +6, WIS +4)
 - Battle Medicine/Treat Wounds: Medicine check, DC 15, immune for an day
 - Treat Wounds removes _Wounded_ condition on success, immune for an hour
-- Spend an hour Treat Wounds, double HP restored
+- Spend an hour Treat Wounds after successful check, double HP restored
 - Heal (4/day): (1) 2d10, (2) 2d10+16, (3) 2d10
 
 | Proficiency | DC | Success | Critical | Failure |

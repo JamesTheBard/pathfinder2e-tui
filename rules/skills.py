@@ -1,12 +1,7 @@
 from dataclasses import dataclass
 from typing import Iterator
 
-from rich.text import Text
-
-from rules.data import armor_penalty, prof_map, skill_list, stats_shorthand
-from rules.helpers import fix_number
-
-skill_headers = ("Skill", "Total", "Stat", "Mod", "Prof", "Misc", "Penalty")
+from rules.data import armor_penalty, skill_list
 
 
 @dataclass
@@ -20,7 +15,7 @@ class Skill:
     check_penalty: int = 0
 
     @property
-    def total(self) -> tuple[int, ...]:
+    def total(self) -> int:
         return self.modifier + self.proficiency_bonus + self.bonus + self.check_penalty
 
     @property
@@ -35,10 +30,6 @@ class Skill:
             self.bonus,
             self.check_penalty,
         )
-
-    @property
-    def header(self) -> tuple[str, ...]:
-        return skill_headers
 
 
 class SkillsMixin:
@@ -73,9 +64,8 @@ class SkillsMixin:
 
         result.proficiency = data.get("proficiency", "untrained")
         result.proficiency_bonus = self.get_proficiency(result.proficiency)
-        stat = data.get("stat", False) or skill_list[skill]
-        result.modifier = self.stats.get_modifier(stat, dexterity)
-        result.stat = stats_shorthand[stat]
+        result.stat = data.get("stat", False) or skill_list[skill]
+        result.modifier = self.stats.get_modifier(result.stat, dexterity)
         result.bonus = data.get("bonus", 0)
 
         return result
@@ -85,7 +75,6 @@ class SkillsMixin:
             defined_skills = [i.casefold() for i in self.data.skills.keys()]
         except AttributeError:
             defined_skills = list()
-            
 
         skills = sorted(list(set(defined_skills).union(skill_list.keys())))
 

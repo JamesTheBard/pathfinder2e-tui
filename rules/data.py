@@ -1,12 +1,3 @@
-stats_shorthand = {
-    "strength": "STR",
-    "dexterity": "DEX",
-    "constitution": "CON",
-    "intelligence": "INT",
-    "wisdom": "WIS",
-    "charisma": "CHA",
-}
-
 skill_list = {
     "acrobatics": "dexterity",
     "arcana": "intelligence",
@@ -40,10 +31,10 @@ saves_list = {
     "willpower": "wisdom",
 }
 
-prof_map = {
-    "untrained": "🅄",
-    "trained": "🆃",
-    "expert": "🅴",
-    "master": "🅼",
-    "legendary": "🅻",
-}
+# prof_map = {
+#     "untrained": "🅄",
+#     "trained": "🆃",
+#     "expert": "🅴",
+#     "master": "🅼",
+#     "legendary": "🅻",
+# }

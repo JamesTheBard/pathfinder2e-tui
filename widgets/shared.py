@@ -35,6 +35,14 @@ action_map = {
 
 attack_map = ["➀", "➁", "➂"]
 
+stats_shorthand = {
+    "strength": "STR",
+    "dexterity": "DEX",
+    "constitution": "CON",
+    "intelligence": "INT",
+    "wisdom": "WIS",
+    "charisma": "CHA",
+}
 
 class TableWidget(Widget):
 

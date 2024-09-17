@@ -9,26 +9,26 @@ from rules.helpers import fix_number
 class Weapon:
     name: str
     keywords: list[str]
-    damage_type: str = ""
-    proficiency: str = "untrained"
-    proficiency_bonus: int = 0
-    potency: int = 0
-    attack_bonus: int = 0
-    attack_stat: Optional[str] = None
-    attack_stat_mod: int = 0
-    damage_stat: Optional[str] = None
-    damage_stat_mod: int = 0
-    damage_bonus: int = 0
-    strength: int = 0
-    dexterity: int = 0
-    damage_die_size: int = 0
-    damage_die_quantity: int = 1
-    striking: int = 0
-    ammo: int = 0
-    weapon_type: str = "melee"
-    source: str = "Unknown"
-    notes: Optional[str] = None
     actions: Optional[str] = None
+    ammo: int = 0
+    attack_bonus: int = 0
+    attack_stat_mod: int = 0
+    attack_stat: Optional[str] = None
+    damage_bonus: int = 0
+    damage_die_quantity: int = 1
+    damage_die_size: int = 0
+    damage_stat_mod: int = 0
+    damage_stat: Optional[str] = None
+    damage_type: str = ""
+    dexterity: int = 0
+    notes: Optional[str] = None
+    potency: int = 0
+    proficiency_bonus: int = 0
+    proficiency: str = "untrained"
+    source: str = "Unknown"
+    strength: int = 0
+    striking: int = 0
+    weapon_type: str = "melee"
 
     @property
     def get_damage(self):
@@ -76,7 +76,7 @@ class WeaponsMixin:
             result.proficiency_bonus = self.get_proficiency(result.proficiency)
             if result.attack_stat:
                 result.attack_stat_mod = self.stats.get_modifier(result.attack_stat)
-            
+
             if result.damage_stat:
                 result.damage_stat_mod = self.stats.get_modifier(result.damage_stat)
 

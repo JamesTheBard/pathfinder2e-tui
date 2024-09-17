@@ -19,6 +19,8 @@ class NoteEditorWidget(TextArea):
         self.load_from_file(self.savefile)
         self.language = "markdown"
         self.show_line_numbers = True
+        self.tab_behavior = "indent"
+        self.indent_width = 4
 
     def load_from_file(self, filename: str | Path):
         filename = Path(filename)

@@ -1,10 +1,12 @@
 from rich.text import Text
 from textual.containers import Container, VerticalScroll
 from textual.widget import Widget
-from textual.widgets import Input, Label, Rule, Static
+from textual.widgets import Input, Label, Static
 
+from rules.skills import Skill
+from rules.stats import Save
 from widgets.data import cs
-from widgets.shared import TableWidget, fix_number, prof_map
+from widgets.shared import TableWidget, fix_number, prof_map, stats_shorthand
 
 
 class StatsWidget(TableWidget):
@@ -16,11 +18,13 @@ class StatsWidget(TableWidget):
         super().__init__(headers, content, border_title, **kwargs)
 
     def format_data(self):
-        for i in cs.stats.data:
-            i = list(i)
-            i[1] = Text(str(i[1]), style="bold on grey19", justify="right")
-            i[2] = Text(fix_number(i[2]), justify="right")
-            yield i
+        for stat in stats_shorthand.keys():
+            i = getattr(cs.stats, stat)
+            yield (
+                Text(stat.title()),
+                Text(str(i), style="bold on grey19", justify="right"),
+                Text(fix_number(cs.stats.get_modifier(stat)), justify="right"),
+            )
 
 
 class SkillsWidget(TableWidget):
@@ -32,16 +36,18 @@ class SkillsWidget(TableWidget):
         super().__init__(headers, content, border_title, **kwargs)
 
     def format_data(self):
+        i: Skill
         for i in cs.skills:
-            i = list(i.data)
-            i[1] = Text(fix_number(i[1]), style="bold on grey19", justify="right")
-            i[2] = Text(i[2], justify="right")
-            i[3] = Text(fix_number(i[3]), justify="right")
-            i[4] = Text(prof_map[i[4]], justify="right")
-            i[5] = Text(fix_number(i[5]), justify="right")
-            i[6] = Text(fix_number(i[6]), justify="right")
-            i[7] = Text(fix_number(i[7]), justify="right")
-            yield i
+            yield [
+                i.name,
+                Text(fix_number(i.total), style="bold on grey19", justify="right"),
+                Text(stats_shorthand[i.stat], justify="right"),
+                Text(fix_number(i.modifier), justify="right"),
+                Text(prof_map[i.proficiency], justify="right"),
+                Text(fix_number(i.proficiency_bonus), justify="right"),
+                Text(fix_number(i.bonus), justify="right"),
+                Text(fix_number(i.check_penalty), justify="right"),
+            ]
 
 
 class SavesWidget(TableWidget):
@@ -53,16 +59,18 @@ class SavesWidget(TableWidget):
         super().__init__(headers, content, border_title, **kwargs)
 
     def format_data(self):
+        i: Save
         for i in cs.saves:
-            i = list(i.data)
-            i[1] = Text(fix_number(i[1]), justify="right", style="bold on grey19")
-            i[2] = Text(i[2], justify="right")
-            i[3] = Text(fix_number(i[3]), justify="right")
-            i[4] = Text(prof_map[i[4]], justify="right")
-            i[5] = Text(fix_number(i[5]), justify="right")
-            i[6] = Text(fix_number(i[6]), justify="right")
-            i[7] = Text(fix_number(i[7]), justify="right")
-            yield i
+            yield (
+                i.name.title(),
+                Text(fix_number(i.total), justify="right", style="bold on grey19"),
+                Text(stats_shorthand[i.stat], justify="right"),
+                Text(fix_number(i.modifier), justify="right"),
+                Text(prof_map[i.proficiency], justify="right"),
+                Text(fix_number(i.proficiency_bonus), justify="right"),
+                Text(fix_number(i.item_bonus), justify="right"),
+                Text(fix_number(i.bonus), justify="right"),
+            )
 
 
 class NameWidget(Widget):
