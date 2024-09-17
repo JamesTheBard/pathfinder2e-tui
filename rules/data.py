@@ -30,11 +30,3 @@ saves_list = {
     "reflex": "dexterity",
     "willpower": "wisdom",
 }
-
-# prof_map = {
-#     "untrained": "🅄",
-#     "trained": "🆃",
-#     "expert": "🅴",
-#     "master": "🅼",
-#     "legendary": "🅻",
-# }
