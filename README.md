@@ -4,6 +4,8 @@ It's a basic Pathfinder 2nd Edition character sheet written as a terminal applic
 
 ![Screencap of the Statistics screen](screencaps/Screenshot%20from%202024-09-17%2015-31-00.png)
 
+![Screencap of the Weapons screen](screencaps/Screenshot%20from%202024-09-17%2015-31-04.png)
+
 ![Screencap of the Feats screen](screencaps/Screenshot%20from%202024-09-17%2015-31-10.png)
 
 ![Screencap of the Data screen](screencaps/Screenshot%20from%202024-09-17%2015-31-14.png)
