@@ -14,7 +14,7 @@ from widgets.shared import TableWidget, attack_map, fix_number, prof_map, action
 
 class ArmorDataWidget(TableWidget):
     """The Armor widget used to display all of the armor information
-    post character sheet calculations.
+    post character sheet calculations in the embedded DataTable.
     """
 
     def __init__(self, **kwargs) -> None:
@@ -22,7 +22,12 @@ class ArmorDataWidget(TableWidget):
         content = self.format_data()
         super().__init__(headers, content, None, **kwargs)
 
-    def format_data(self):
+    def format_data(self) -> Iterable[tuple]:
+        """Format the table data for display in the widget.
+
+        Yields:
+            tuple: Tuple of various values
+        """
         armor_map = {
             "ac_bonus": "AC Bonus",
             "proficiency_bonus": "Prof",
@@ -48,6 +53,8 @@ class ArmorDataWidget(TableWidget):
 
 
 class ShieldDataWidget(TableWidget):
+    """The widget for composing a displaying all of the shield information in the DataTable
+    """
 
     def __init__(self, **kwargs):
         headers = ("", "Value")
@@ -61,6 +68,8 @@ class ShieldDataWidget(TableWidget):
 
 
 class ShieldWidget(Widget):
+    """The outer container for all Shield information.
+    """
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

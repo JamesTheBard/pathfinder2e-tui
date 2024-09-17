@@ -40,6 +40,10 @@ class NoteEditorWidget(TextArea):
     def action_save_content(self):
         self.save_to_file(self.savefile)
         self.notify("Notes saved.")
+        markdown: MarkdownViewer = self.app.query_exactly_one("#notesdisplay")
+        m = markdown.query_exactly_one(Markdown)
+        m.update(self.text)
+
 
 
 class NotesMarkdown(MarkdownViewer):

@@ -40,6 +40,9 @@ class FeatsEditorWidget(TextArea):
     def action_save_content(self):
         self.save_to_file(self.savefile)
         self.notify("Feats and spells saved.")
+        markdown: MarkdownViewer = self.app.query_exactly_one("#featsdisplay")
+        m = markdown.query_exactly_one(Markdown)
+        m.update(self.text)
 
 
 class FeatsMarkdown(MarkdownViewer):
