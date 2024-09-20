@@ -1,4 +1,12 @@
-# Feats, Spells, and Actions
+# Feats
+
+## Memorized
+
+| Level | # | Memorized |
+|:---:|:---:|:---:|
+| Cantrip | 5 | Divine Lance, Guidance, Needle Darts, Detect Magic, Rousing Splash |
+| 1st     | 3 | Bless, Mystic Armor, Sanctuary |
+| 2nd     | 3 | Dispel Magic, Inner Radiance Torrent, Spiritual Armament |
 
 ## Quick Reference
 
@@ -14,6 +22,7 @@
 | Expert | 20 | 2d8+10 | 4d8+10 | 1d8 |
 | Master | 25 | 2d8+30 | 4d8+30 | 1d8 |
 | Legendary | 30 | 2d8+50 | 4d8+50 | 1d8 |
+
 
 ## Feats
 
@@ -147,12 +156,3 @@ You can patch up wounds, even in combat. Attempt a Medicine check with the same 
 
 **Keywords** General, Healing, Manipulate, Skill
 
-## Spells
-
-### Cantrips
-
-This is a test.
-
-### Level 1
-
-More tests.

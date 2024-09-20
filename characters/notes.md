@@ -1,5 +1,11 @@
 # Campaign Notes
 
+## In-Town To-Do
+
+- Buy cold iron hair pins for _Needle Darts_
+- Repair shield
+- Get runes installed on the katana
+
 ## Loot
 
 ### Beginning of Thistletop

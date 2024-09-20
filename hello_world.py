@@ -60,7 +60,7 @@ class NotesScreen(Screen):
 
 class FeatsScreen(Screen):
 
-    SUB_TITLE = "Feats and Spells"
+    SUB_TITLE = "Feats"
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -73,6 +73,24 @@ class FeatsScreen(Screen):
             with TabPane("Editor"):
                 yield VerticalScroll(
                     FeatsEditorWidget(savefile="characters/feats.md")
+                )
+
+
+class SpellsScreen(Screen):
+
+    SUB_TITLE = "Spells"
+
+    def compose(self) -> ComposeResult:
+        yield Header()
+        yield Footer()
+        with TabbedContent():
+            with TabPane("Spells"):
+                yield VerticalScroll(
+                    FeatsMarkdown(id="spellsdisplay", savefile="characters/spells.md")
+                )
+            with TabPane("Editor"):
+                yield VerticalScroll(
+                    FeatsEditorWidget(savefile="characters/spells.md")
                 )
 
 
@@ -93,9 +111,10 @@ class PF2eCharacterSheet(App):
     BINDINGS = [
         ("f1", "switch_mode('stats_screen')", "Statistics"),
         ("f2", "switch_mode('combat_screen')", "Combat"),
-        ("f3", "switch_mode('feats_screen')", "Feats/Spells"),
-        ("f4", "switch_mode('notes_screen')", "Notes"),
-        ("f5", "switch_mode('data_screen')", "Data"),
+        ("f3", "switch_mode('feats_screen')", "Feats"),
+        ("f4", "switch_mode('spells_screen')", "Spells"),
+        ("f5", "switch_mode('notes_screen')", "Notes"),
+        ("f6", "switch_mode('data_screen')", "Data"),
         ("ctrl+r", "refresh", "Reload"),
         ("ctrl+q", "quit", "Quit"),
     ]
@@ -104,6 +123,7 @@ class PF2eCharacterSheet(App):
         "combat_screen": CombatScreen,
         "notes_screen": NotesScreen,
         "feats_screen": FeatsScreen,
+        "spells_screen": SpellsScreen,
         "data_screen": DataScreen
     }
 
