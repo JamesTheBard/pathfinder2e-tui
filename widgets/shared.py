@@ -11,7 +11,7 @@ prof_map_linux = {
     "legendary": "🅻",
 }
 
-prof_map_windows = [i[0].upper() for i in prof_map_linux]
+prof_map_windows = {k: k[0].upper() for k in prof_map_linux.keys()}
 
 action_map_linux = {
     "reaction": "🅁",
