@@ -3,7 +3,7 @@ from textual.widget import Widget
 from textual.widgets import DataTable
 
 
-prof_map = {
+prof_map_linux = {
     "untrained": "🅄",
     "trained": "🆃",
     "expert": "🅴",
@@ -11,8 +11,9 @@ prof_map = {
     "legendary": "🅻",
 }
 
+prof_map_windows = [i[0].upper() for i in prof_map_linux]
 
-action_map = {
+action_map_linux = {
     "reaction": "🅁",
     "free": "🄵",
     "1": "➊",
@@ -20,7 +21,16 @@ action_map = {
     "3": "➌",
 }
 
-attack_map = ["➀", "➁", "➂"]
+action_map_windows = {
+    "reaction": "R",
+    "free": "F",
+    "1": "1",
+    "2": "2",
+    "3": "3",
+}
+
+attack_map_linux = ["➀", "➁", "➂"]
+attack_map_windows = ["1", "2", "3"]
 
 stats_shorthand = {
     "strength": "STR",

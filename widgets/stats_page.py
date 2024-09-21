@@ -2,13 +2,18 @@ from rich.text import Text
 from textual.containers import Container, VerticalScroll
 from textual.widget import Widget
 from textual.widgets import Input, Label, Static
+import platform
 
 from rules.helpers import fix_number
 from rules.skills import Skill
 from rules.stats import Save
 from widgets.data import cs
-from widgets.shared import TableWidget, prof_map, stats_shorthand
+from widgets.shared import TableWidget, stats_shorthand
 
+if platform.system() == "Windows":
+    from widgets.shared import prof_map_windows as prof_map
+else:
+    from widgets.shared import prof_map_linux as prof_map
 
 class StatsWidget(TableWidget):
 

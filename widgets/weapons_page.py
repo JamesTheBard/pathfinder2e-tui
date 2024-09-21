@@ -9,8 +9,17 @@ from textual.widgets import (Markdown, Rule, Static, TabbedContent, TabPane,
 from rules.helpers import fix_number, format_keywords
 from rules.weapons import Weapon
 from widgets.data import cs
-from widgets.shared import TableWidget, action_map, attack_map, prof_map
+from widgets.shared import TableWidget
+import platform
 
+if platform.system() == "Windows":
+    from widgets.shared import attack_map_windows as attack_map
+    from widgets.shared import prof_map_windows as prof_map
+    from widgets.shared import action_map_windows as action_map
+else:
+    from widgets.shared import attack_map_linux as attack_map
+    from widgets.shared import prof_map_linux as prof_map    
+    from widgets.shared import action_map_linux as action_map
 
 class ArmorDataWidget(TableWidget):
     """The Armor widget used to display all of the armor information
