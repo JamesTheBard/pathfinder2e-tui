@@ -2,11 +2,36 @@
 
 ## In-Town To-Do
 
+- Get the party loot sorted
 - Buy cold iron hair pins for _Needle Darts_
 - Repair shield
 - Get runes installed on the katana
 
-## Loot
+## Personal Loot
+
+**Funds**: 25 gold
+
+### Inventory
+
+- Adventurer's Kit (bedroll, chalk, flint & steel, 50' rope, rations, soap, torches, waterskin)
+- Religious Symbol
+- Katana
+- Dagger
+- Wakazashi
+- Sturdy Shield
+- Healer's Kit
+- Thieves' Tools (broken)
+- Darkvision Elixer
+- Everlight Crystal
+- Scroll of Invisibility
+
+### Accessories
+
+- Ceremonial Robes
+- Adventuring Robes
+- Hairpins (x3, iron)
+
+## Party Loot
 
 ### Beginning of Thistletop
 
