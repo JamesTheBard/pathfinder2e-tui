@@ -1,5 +1,31 @@
 # Campaign Notes
 
+## Notes
+
+### Memorized
+
+| Level | # | Memorized |
+|:---:|:---:|:---:|
+| Cantrip | 5 | Divine Lance, Guidance, Needle Darts, Detect Magic, Rousing Splash |
+| 1st     | 3 | Bless, Enfeeble, Sanctuary |
+| 2nd     | 3 | Dispel Magic, Inner Radiance Torrent, Spiritual Armament |
+
+### Quick Reference
+
+- Spell DC: 20, Spell Mod: +10 (Trained +6, WIS +4)
+- Battle Medicine/Treat Wounds: Medicine check, DC 15, immune for an day
+- Treat Wounds removes _Wounded_ condition on success, immune for an hour
+- Spend an hour Treat Wounds after successful check, double HP restored
+- Heal (4/day): (1) 2d10, (2) 2d10+16, (3) 2d10
+
+| Proficiency | DC | Success | Critical | Failure |
+|:---:|:---:|:---:|:---:|:---:|
+| Trained | 15 | 2d8 | 4d8 | 1d8 |
+| Expert | 20 | 2d8+10 | 4d8+10 | 1d8 |
+| Master | 25 | 2d8+30 | 4d8+30 | 1d8 |
+| Legendary | 30 | 2d8+50 | 4d8+50 | 1d8 |
+
+
 ## Personal Loot
 
 **Funds**: 36.6 gold
@@ -14,14 +40,14 @@
 - Wakazashi (+1)
 - Sturdy Shield
 - Healer's Kit
-- Thieves' Tools (broken)
+- Thieves' Tools
 - Darkvision Elixer
 - Everlight Crystal
 - Scroll of Invisibility
 - 2x Iron Keys
 - Bear Trap (5d6 damage, DC 18 Reflex to escape)
 - [Wand of _Mystic Armor_](https://2e.aonprd.com/Equipment.aspx?ID=3050)
-- Sihedron Medallion (Item 5)
+- Sihedron Medallion (Item 5) [Invested]
 - Silver/Gold 7-point Star (5 gp)
 
 ### Personal
@@ -29,7 +55,9 @@
 - Cold Iron hairpins
 - Jade comb
 
-### Sihedron Medallion (Item 5)
+### Custom Items 
+
+#### Sihedron Medallion (Item 5)
 
 **Usage**: Worn medallion, **Bulk** -
 

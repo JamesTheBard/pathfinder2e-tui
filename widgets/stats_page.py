@@ -7,7 +7,7 @@ import platform
 from rules.helpers import fix_number
 from rules.skills import Skill
 from rules.stats import Save
-from widgets.data import cs
+from widgets.data import cs, temp_data
 from widgets.shared import TableWidget, stats_shorthand
 
 if platform.system() == "Windows":
@@ -145,6 +145,28 @@ class CurrentHP(Input):
         cs.current_hp = self.value
 
 
+class TempHP(Input):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.type = "integer"
+        self.value = str(temp_data.temp_hp)
+
+    def action_submit(self):
+        temp_data.temp_hp = self.value
+
+
+class ShieldHP(Input):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.type = "integer"
+        self.value = str(temp_data.shield_hp)
+
+    def action_submit(self):
+        temp_data.shield_hp = self.value
+
+
 class HitPointWidget(Widget):
 
     def __init__(self, **kwargs):
@@ -160,9 +182,22 @@ class HitPointWidget(Widget):
         yield Container(
             Label(Text(" Current HP: ", style="bold")),
             CurrentHP(id="testhp"),
+            Label(Text(" Temp HP: ", style="bold")),
+            TempHP(id="temphp"),
             id="hitpoints"
         )
-        yield Static(self.build_rest())
+
+        rest_text = [
+            Text(" Rest: ", style="bold"),
+            Text(f" {fix_number(cs.hp.rest)} HP ", style="on #303030"),
+        ]
+
+        yield Container(
+            Label(Text().join(rest_text)),
+            Label(Text("    Shield HP: ", style="bold")),
+            ShieldHP(id="shieldhp"),
+            id="hitpoints2"
+        )
 
     def build_hp(self):
         text = [
@@ -172,8 +207,14 @@ class HitPointWidget(Widget):
         return Text().join(text)
 
     def build_rest(self):
-        text = [
+        rest_text = [
             Text(" Rest: ", style="bold"),
             Text(f" {fix_number(cs.hp.rest)} HP ", style="on #303030"),
         ]
-        return Text().join(text)
+
+        yield Container(
+            Static(Text().join(rest_text)),
+            Label(Text(" Shield HP: ", style="bold")),
+            ShieldHP(id="shieldhp"),
+            # id="hitpoints2"
+        )

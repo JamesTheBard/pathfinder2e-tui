@@ -80,7 +80,7 @@ ToastRack {
     height: 100%;
 }
 
-#testhp {
+#testhp, #temphp, #shieldhp {
     border: none;
     outline: none;
     padding: 0 1;
@@ -89,7 +89,7 @@ ToastRack {
     display: block;
 }
 
-#hitpoints {
+#hitpoints, #hitpoints2 {
     layout: horizontal;
     height: auto;
 }

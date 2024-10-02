@@ -4,6 +4,8 @@
 
 ### Detect Magic
 
+**Keywords**: cantrip, concentrate, detection, manipulate
+
 **Source**: [Player Core, p. 323](https://2e.aonprd.com/Spells.aspx?ID=1485)
 
 **Traditions** arcane, divine, occult, primal
@@ -22,6 +24,8 @@ You detect illusion magic only if that magic's effect has a lower rank than the 
 
 ### Divine Lance
 
+**Keywords**: attack, cantrip, concentrate, manipulate, sanctified, spirit
+
 **Source**: [Player Core, p. 325](https://2e.aonprd.com/Spells.aspx?ID=1498)
 
 **Traditions**: divine
@@ -38,6 +42,8 @@ You unleash a beam of divine energy. Make a ranged spell attack against the targ
 
 ### Guidance
 
+**Keywords**: cantrip, concentrate
+
 **Source**: [Player Core, p. 334](https://2e.aonprd.com/Spells.aspx?ID=1549)
 
 **Traditions**: divine, occult, primal
@@ -51,6 +57,8 @@ You unleash a beam of divine energy. Make a ranged spell attack against the targ
 You ask for the guidance of supernatural entities, granting the target a +1 status bonus to one attack roll, Perception check, saving throw, or skill check the target attempts before the duration ends. The target chooses which roll to use the bonus on before rolling. If the target uses the bonus, the spell ends. Either way, the target is then temporarily immune for 1 hour.
 
 ### Light
+
+**Keywords**: cantrip, concentrate, light, manipulate
 
 **Source**: [Player Core, p. 340](https://2e.aonprd.com/Spells.aspx?ID=1585)
 
@@ -69,6 +77,8 @@ You can Dismiss the spell. If you Cast the Spell while you already have four lig
 **Heightened (4th)**: The orb sheds light in a 60-foot radius (and dim light for the next 60 feet).
 
 ### Needle Darts
+
+**Keywords**: attack, cantrip, concentrate, manipulate, metal
 
 **Source**: [Rage of Elements, p. 144](https://2e.aonprd.com/Spells.aspx?ID=1375)
 
@@ -89,6 +99,8 @@ Success The target takes full damage.
 
 ### Rousing Splash
 
+**Keywords**: cantrip, concentrate, manipulate, water
+
 **Source**: [Rage of Elements, p. 174](https://2e.aonprd.com/Spells.aspx?ID=1395)
 
 **Traditions**: divine, primal
@@ -105,6 +117,8 @@ You cause a splash of cold water to descend on an ally's head, granting some tem
 
 ### Bless
 
+**Keywords**: aura, concentrate, manipulate, mental
+
 **Source**: [Player Core, p. 318](https://2e.aonprd.com/Spells.aspx?ID=1451)
 
 **Traditions**: divine, occult
@@ -118,6 +132,8 @@ You cause a splash of cold water to descend on an ally's head, granting some tem
 Blessings from beyond help your companions strike true. You and your allies gain a +1 status bonus to attack rolls while within the emanation. Once per round on subsequent turns, you can Sustain the spell to increase the emanation's radius by 10 feet. Bless can counteract bane.
 
 ### Enfeeble
+
+**Keywords**: concentrate, manipulate
 
 **Source**: [Player Core, p. 329](https://2e.aonprd.com/Spells.aspx?ID=1513)
 
@@ -138,6 +154,8 @@ You sap the target's strength, depending on its Fortitude save.
 
 ### Heal
 
+**Keywords**: healing, manipulate, vitality
+
 **Source**: [Player Core, p. 335](https://2e.aonprd.com/Spells.aspx?ID=1554)
 
 **Traditions**: divine, primal
@@ -155,6 +173,8 @@ You channel vital energy to heal the living or damage the undead. If the target 
 **Heightened (+1)**: The amount of healing or damage increases by 1d8, and the extra healing for the 2-action version increases by 8.
 
 ### Lock
+
+**Keywords**: concentrate, manipulate
 
 **Source**: [Player Core, p. 341](https://2e.aonprd.com/Spells.aspx?ID=1589)
 
@@ -174,6 +194,8 @@ If the target is opened, the spell ends. Assuming the target is not barred or lo
 
 ### Mending
 
+**Keywords**: concentrate, manipulate
+
 **Source**: [Player Core, p. 343](https://2e.aonprd.com/Spells.aspx?ID=1597)
 
 **Traditions**: arcane, divine, occult, primal
@@ -189,6 +211,8 @@ You repair the target item. You restore 5 Hit Points per spell rank to the targe
 **Heightened (3rd)**: You can target a non-magical object of 2 Bulk or less, or a magical object of 1 Bulk or less.
 
 ### Mystic Armor
+
+**Keywords**: concentrate, manipulate
 
 **Source**: [Player Core, p. 346](https://2e.aonprd.com/Spells.aspx?ID=1611)
 
@@ -207,6 +231,8 @@ You ward yourself with shimmering magical energy, gaining a +1 item bonus to AC 
 
 ### Protection
 
+**Keywords**: concentrate, manipulate
+
 **Source**: [Player Core, p. 351](https://2e.aonprd.com/Spells.aspx?ID=1641)
 
 **Traditions**: divine, occult
@@ -222,6 +248,8 @@ You ward a creature against harm. The target gains a +1 status bonus to Armor Cl
 **Heightened (3rd)**: You can choose to have the benefits also affect all your allies in a 10-foot emanation around the target.
 
 ### Sanctuary
+
+**Keywords**: concentrate, manipulate
 
 **Source**: [Player Core, p. 355](https://2e.aonprd.com/Spells.aspx?ID=1660)
 
@@ -244,6 +272,8 @@ You ward a creature with protective energy that deters attacks. Creatures attemp
 
 ### Blood Vendetta
 
+**Keywords**: curse
+
 **Source**: [Player Core, p. 318](https://2e.aonprd.com/Spells.aspx?ID=1454)
 
 **Traditions**: arcane, divine, occult
@@ -265,6 +295,8 @@ You curse the target, punishing it for having the audacity to spill your blood. 
 
 ### Calm
 
+**Keywords**: concentrate, emotion, incapacitation, manipulate, mental
+
 **Source**: [Player Core, p. 319](https://2e.aonprd.com/Spells.aspx?ID=1458)
 
 **Traditions**: divine, occult
@@ -284,6 +316,8 @@ You forcibly calm creatures in the area, soothing them into a nonviolent state; 
 
 ### Cleanse Affliction
 
+**Keywords**: concentrate, healing, manipulate
+
 **Source**: [Player Core, p. 320](https://2e.aonprd.com/Spells.aspx?ID=1467)
 
 **Traditions**: divine, occult, primal
@@ -299,6 +333,8 @@ Gentle restorative magic pushes back the effects of toxins and more complex mala
 
 ### Dispel Magic
 
+**Keywords**: concentrate, manipulate
+
 **Source**: [Player Core, p. 325](https://2e.aonprd.com/Spells.aspx?ID=1493)
 
 **Traditions**: arcane, divine, occult, primal
@@ -310,6 +346,8 @@ Gentle restorative magic pushes back the effects of toxins and more complex mala
 You unravel the magic behind a spell or effect. Attempt a [counteract](https://2e.aonprd.com/Rules.aspx?ID=3280) check against the target. If you successfully counteract a magic item, it becomes a mundane item of its type for 10 minutes. This doesn't change the item's non-magical properties. If the target is an artifact or similar item, you automatically fail.
 
 ### Everlight
+
+**Keywords**: concentrate, light, manipulate
 
 **Source**: [Player Core, p. 329](https://2e.aonprd.com/Spells.aspx?ID=1518)
 
@@ -324,6 +362,8 @@ You unravel the magic behind a spell or effect. Attempt a [counteract](https://2
 The gemstone you touch glows, spreading bright light with a color of your choice in a 20-foot radius (and dim light for the next 20 feet). The spell ends immediately if the gemstone is broken.
 
 ### Inner Radiance Torrent
+
+**Keywords**: force, light, necromancy
 
 **Source**: [Secrets of Magic, p. 112](https://2e.aonprd.com/Spells.aspx?ID=934)
 
@@ -345,6 +385,8 @@ You gradually manifest your spiritual energy into your cupped hands before firin
 
 ### Marvelous Mount
 
+**Keywords**: concentrate, manipulate
+
 **Source**: [Player Core, p. 342](https://2e.aonprd.com/Spells.aspx?ID=1594)
 
 **Traditions**: arcane, divine, occult, primal
@@ -363,6 +405,8 @@ You conjure a Large fantastical creature to serve as a mount for the target. The
 - **Heightened (6th)**: The mount has a Speed and fly Speed of 80 feet.
 
 ### Revealing Light
+
+**Keywords**: concentrate, light, manipulate
 
 **Source**: [Player Core, p. 353](https://2e.aonprd.com/Spells.aspx?ID=1653)
 
@@ -383,6 +427,8 @@ A wave of magical light washes over the area. You choose the appearance of the l
 
 ### Share Life
 
+**Keywords**: concentrate, manipulate
+
 **Source**: [Player Core, p. 356](https://2e.aonprd.com/Spells.aspx?ID=1669)
 
 **Traditions**: divine
@@ -396,6 +442,8 @@ A wave of magical light washes over the area. You choose the appearance of the l
 You forge a temporary link between the target's life essence and your own. The target takes half damage from all effects that deal Hit Point damage, and you take the remainder of the damage. When you take damage through this link, you don't apply any resistances, weaknesses, or other abilities you have to that damage; you simply take that amount of damage. The spell ends if the target is ever more than 30 feet away from you. If either you or the target is reduced to 0 Hit Points, any damage from this spell is resolved and then the spell ends.
 
 ### Silence
+
+**Keywords**: illusion, manipulate, subtle
 
 **Source**: [Player Core, p. 357](https://2e.aonprd.com/Spells.aspx?ID=1674)
 
@@ -412,6 +460,8 @@ The target makes no sound, preventing creatures from noticing it using hearing a
 **Heightened (4th)**: The spell creates an aura in a 10-foot emanation around the touched creature, silencing all sound in or passing through it. While within the aura, creatures are subject to the same effects as the target. Depending upon the position of the effect, a creature might notice the lack of sound reaching it (blocking off the noise coming from a party, for example).
 
 ### Spiritual Armament
+
+**Keywords**: concentrate, manipulate, sanctified, spirit
 
 **Source**: [Player Core, p. 359](https://2e.aonprd.com/Spells.aspx?ID=1687)
 

@@ -55,10 +55,7 @@ class ArmorDataWidget(TableWidget):
             armor_map["check_penalty"] = "Check Penalty"
 
         for k, v in armor_map.items():
-            if k in ["potency"]:
-                yield (armor_map[k], Text(str(getattr(cs.armor, k)), justify="right"))
-            else:
-                yield (armor_map[k], Text(fix_number(getattr(cs.armor, k)), justify="right"))
+            yield (armor_map[k], Text(fix_number(getattr(cs.armor, k)), justify="right"))
 
 
 class ShieldDataWidget(TableWidget):
@@ -89,7 +86,7 @@ class ShieldWidget(Widget):
             yield Static(Text("No shield equipped."))
 
         yield Container(
-            Static(Text(f"{cs.shield.name}: {fix_number(cs.shield.bonus)} AC\n", style="bold")),
+            Static(Text(f" {cs.shield.name}: {fix_number(cs.shield.bonus)} AC\n", style="bold")),
             VerticalScroll(ShieldDataWidget(id="shielddata")),
         )
 

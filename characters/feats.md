@@ -1,32 +1,6 @@
 # Feats
 
-## Memorized
-
-| Level | # | Memorized |
-|:---:|:---:|:---:|
-| Cantrip | 5 | Divine Lance, Guidance, Needle Darts, Detect Magic, Rousing Splash |
-| 1st     | 3 | Bless, Enfeeble, Sanctuary |
-| 2nd     | 3 | Dispel Magic, Inner Radiance Torrent, Spiritual Armament |
-
-## Quick Reference
-
-- Spell DC: 20, Spell Mod: +10 (Trained +6, WIS +4)
-- Battle Medicine/Treat Wounds: Medicine check, DC 15, immune for an day
-- Treat Wounds removes _Wounded_ condition on success, immune for an hour
-- Spend an hour Treat Wounds after successful check, double HP restored
-- Heal (4/day): (1) 2d10, (2) 2d10+16, (3) 2d10
-
-| Proficiency | DC | Success | Critical | Failure |
-|:---:|:---:|:---:|:---:|:---:|
-| Trained | 15 | 2d8 | 4d8 | 1d8 |
-| Expert | 20 | 2d8+10 | 4d8+10 | 1d8 |
-| Master | 25 | 2d8+30 | 4d8+30 | 1d8 |
-| Legendary | 30 | 2d8+50 | 4d8+50 | 1d8 |
-
-
-## Feats
-
-### Shield Block (Heritage 1)
+## Shield Block (Heritage 1)
 
 **Source**: [Player Core, p. 262](https://2e.aonprd.com/Feats.aspx?ID=5212)
 
@@ -37,7 +11,7 @@ You snap your shield in place to ward off a blow. Your shield prevents you from 
 
 **Keywords** General
 
-### Natural Ambition (Ancestry 1)
+## Natural Ambition (Ancestry 1)
 
 **Source**: [Player Core, p. 64](https://2e.aonprd.com/Feats.aspx?ID=4478)
 
@@ -45,7 +19,7 @@ You were raised to be ambitious and always reach for the stars, leading you to p
 
 **Keywords** Human
 
-### Healing Hands (Cleric 1)
+## Healing Hands (Cleric 1)
 
 **Source**: [Player Core, p. 114](https://2e.aonprd.com/Feats.aspx?ID=4646)
 
@@ -55,7 +29,7 @@ Your vitality is even more vibrant and restorative. When you cast heal, you roll
 
 **Keywords** Cleric
 
-### Courtly Graces (Background 1)
+## Courtly Graces (Background 1)
 
 **Source**: [Player Core, p. 254](https://2e.aonprd.com/Feats.aspx?ID=5138)
 
@@ -65,7 +39,7 @@ You were raised among the nobility or have learned proper etiquette and bearing,
 
 **Keywords** General, Skill
 
-### Communal Healing (Cleric 2)
+## Communal Healing (Cleric 2)
 
 **Source**: [Player Core, p. 115](https://2e.aonprd.com/Feats.aspx?ID=4648)
 
@@ -73,7 +47,7 @@ You’re an exceptional conduit for vitality and, as you channel it through you,
 
 **Keywords** Cleric, Healing, Vitality
 
-### Bastion Dedication (Archetype 2)
+## Bastion Dedication (Archetype 2)
 
 **Source**: [Advanced Player's Guide, p. 159](https://2e.aonprd.com/Feats.aspx?ID=1895)
 
@@ -85,7 +59,7 @@ You are particularly skilled at using a shield in combat. You gain the _Reactive
 
 **Keywords** Archetype, Dedication
 
-### Reactive Shield (Feat 1)
+## Reactive Shield (Feat 1)
 
 **Source**: [Player Core, p. 120](https://2e.aonprd.com/Feats.aspx?ID=4772)
 
@@ -97,7 +71,7 @@ You can snap your shield into place just as you would take a blow, avoiding the 
 
 **Keywords** Fighter
 
-### Intimidating Glare (Skill 2)
+## Intimidating Glare (Skill 2)
 
 **Source**: [Player Core, p. 257](https://2e.aonprd.com/Feats.aspx?ID=5162)
 
@@ -107,7 +81,7 @@ You can Demoralize with a mere glare. When you do, Demoralize loses the auditory
 
 **Keywords** General, Skill
 
-### Emblazon Armament (General 3)
+## Emblazon Armament (General 3)
 
 **Source**: [Player Core, p. 115](https://2e.aonprd.com/Feats.aspx?ID=4649)
 
@@ -118,7 +92,7 @@ Carefully etching a sacred image into a physical object, you steel yourself for 
 
 **Keywords** Cleric, Exploration
 
-### Raise Symbol (Cleric 4)
+## Raise Symbol (Cleric 4)
 
 **Source**: [Player Core, p. 116](https://2e.aonprd.com/Feats.aspx?ID=4658)
 
@@ -130,7 +104,7 @@ If the religious symbol you’re raising is a shield, such as with Emblazon Arma
 
 **Keywords** Cleric
 
-### Disarming Block (Archetype 4)
+## Disarming Block (Archetype 4)
 
 **Source**: [Advanced Player's Guide, p. 159](https://2e.aonprd.com/Feats.aspx?ID=1896)
 
@@ -144,7 +118,7 @@ You attempt to Disarm the creature whose attack you blocked of the weapon they a
 
 **Keywords** Archetype
 
-### Battle Medicine (Skill 4)
+## Battle Medicine (Skill 4)
 
 **Source**: [Player Core, p. 253](https://2e.aonprd.com/Feats.aspx?ID=5125)
 
