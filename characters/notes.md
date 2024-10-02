@@ -1,73 +1,54 @@
 # Campaign Notes
 
-## In-Town To-Do
-
-- Get the party loot sorted
-- Buy cold iron hair pins for _Needle Darts_
-- Repair shield
-- Get runes installed on the katana
-
 ## Personal Loot
 
-**Funds**: 25 gold
+**Funds**: 36.6 gold
 
 ### Inventory
 
 - Adventurer's Kit (bedroll, chalk, flint & steel, 50' rope, rations, soap, torches, waterskin)
 - Religious Symbol
-- Katana
+- Robes (+1 AC)
+- Katana (+1 Striking)
 - Dagger
-- Wakazashi
+- Wakazashi (+1)
 - Sturdy Shield
 - Healer's Kit
 - Thieves' Tools (broken)
 - Darkvision Elixer
 - Everlight Crystal
 - Scroll of Invisibility
+- 2x Iron Keys
+- Bear Trap (5d6 damage, DC 18 Reflex to escape)
+- [Wand of _Mystic Armor_](https://2e.aonprd.com/Equipment.aspx?ID=3050)
+- Sihedron Medallion (Item 5)
+- Silver/Gold 7-point Star (5 gp)
 
-### Accessories
+### Personal
 
-- Ceremonial Robes
-- Adventuring Robes
-- Hairpins (x3, iron)
+- Cold Iron hairpins
+- Jade comb
+
+### Sihedron Medallion (Item 5)
+
+**Usage**: Worn medallion, **Bulk** -
+
+This medallion hangs on a leather cord, a silver disc inscribed with the Sihedron.  The back of the Medallion can have Resilient Runes etched into it.
+
+**Activate** 2 actions; Once per day; **Requirements** The Sihedron Medallion must not have been used to grant a corpse the benefits of _Gentle Repose_ on the same day; The wearer gains the benefits of a 2nd level _False Life_ spell for 8 hours using their INT, WIS, or CHA as their spellcasting ability modifier whichever score is best.  The temporary hit points gained from this are lost if the Medallion is removed.
+
+**Activate** 2 actions; Once per day; **Requirements** The invested Silhedron Medallion is placed around the neck of a corpse.  The Sihedron Medallion has not been used to gain the benefits of _False Life_ on the same day.  The targeted corpse gains the benefit of a 2nd level _Gentle Repose_ until the the next time you make your daily preparations.  The duration immediately ends if the medallion is removed from the corpse.
 
 ## Party Loot
 
-### Beginning of Thistletop
+- Empty
 
-- +1 Striking Shortsword (Ripnugget)
-- 2x Iron Keys
-- Silver Holy Symbol of Lamashtu (4 gp)
-- Bear Trap (5d6 damage, DC 18 Reflex to escape)
-- [Climbing Bolt](https://2e.aonprd.com/Equipment.aspx?ID=2922)
-- [Glue Bomb (Moderate)](https://2e.aonprd.com/Equipment.aspx?ID=2878)
-- Marvellous Miniature (Holly Bush)
-- Everburning Torch
-- [Wand of _Mystic Armor_](https://2e.aonprd.com/Equipment.aspx?ID=3050)
-- [Elixer of Darkvision (Moderate)](https://2e.aonprd.com/Equipment.aspx?ID=2885)
-- Lyrie's Spellbook (18 gp)
-- Assorted Coins (44 gp)
-- Malachite Gems (3.4 gp)
-- Golden Holy Symbol of Sarenrae (10 gp)
-- Blue Silk Gown (15 gp)
-- [Infiltrator's Elixir](https://2e.aonprd.com/Equipment.aspx?ID=93)
+## Lumber Mill Notes
 
-### Nualia's Loot
-
-- Sihedron Medallion (Item 5)
-- Rune of +1 Weapon Potency
-- Rune of Striking
-- [Fear Gem](https://2e.aonprd.com/Equipment.aspx?ID=2975)
-- [Tiger Menuki](https://2e.aonprd.com/Equipment.aspx?ID=2995)
-
-### Crab
-
-- 40 gp
-- [Aerial Cloak](https://2e.aonprd.com/Equipment.aspx?ID=2575)
-- Silver/Gold 7-point Star (5 gp)
-
-### Transmutation Room
-
-- [Elixir of Life (Lesser)](https://2e.aonprd.com/Equipment.aspx?ID=2887)
-- Rune of +1 Weapon Potency
-- Rune of +1 Armor Potency
+- Dead body desecrated, has a 7-pointed star carved into him.  Exact match to the seven pointed star.
+- Scratches made by a creature with claws.
+- Smell near the wounds made by the claws smell even worse than normal.
+- Horrific decomposition.
+- Ibor Thorn only survivor, discovered bodies.  Questioned by sheriff, held by guards for protection.
+- Ven Vendor is a suspect, owner of general store.  Trean was his daughter.  When informed, flew into a rage.  Fought like hell regardless.  Behavior makes sense, but is weird with respect to actions.
+- Other murders: conment from Galduria, murdered in abandoned bar, bodyguards survived now in insane asylum.

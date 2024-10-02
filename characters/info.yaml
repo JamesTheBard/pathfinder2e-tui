@@ -52,6 +52,7 @@ armor:
   name: Unarmored
   proficiency: trained
   equipped: True
+  potency: 1
 shield:
   name: Sturdy Shield
   bonus: 2
@@ -73,6 +74,7 @@ weapons:
     weapon_type: melee
     damage_type: piercing
     damage_die_size: 4
+    potency: 1
     keywords: agile, finesse, throw 10 ft., versatile s
     source: Player Core, p. 277
     notes: This small, bladed weapon is held in one hand and used to stab a creature in close combat. It can also be thrown.

@@ -5,7 +5,7 @@
 | Level | # | Memorized |
 |:---:|:---:|:---:|
 | Cantrip | 5 | Divine Lance, Guidance, Needle Darts, Detect Magic, Rousing Splash |
-| 1st     | 3 | Bless, Mystic Armor, Sanctuary |
+| 1st     | 3 | Bless, Enfeeble, Sanctuary |
 | 2nd     | 3 | Dispel Magic, Inner Radiance Torrent, Spiritual Armament |
 
 ## Quick Reference
