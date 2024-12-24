@@ -25,7 +25,6 @@
 | Master | 25 | 2d8+30 | 4d8+30 | 1d8 |
 | Legendary | 30 | 2d8+50 | 4d8+50 | 1d8 |
 
-
 ## Personal Loot
 
 **Funds**: 36.6 gold
@@ -78,5 +77,24 @@ This medallion hangs on a leather cord, a silver disc inscribed with the Sihedro
 - Smell near the wounds made by the claws smell even worse than normal.
 - Horrific decomposition.
 - Ibor Thorn only survivor, discovered bodies.  Questioned by sheriff, held by guards for protection.
-- Ven Vendor is a suspect, owner of general store.  Trean was his daughter.  When informed, flew into a rage.  Fought like hell regardless.  Behavior makes sense, but is weird with respect to actions.
+- Ven Vendor is a suspect, owner of general store.  Katrine was his daughter.  When informed, flew into a rage.  Fought like hell regardless.  Behavior makes sense, but is weird with respect to actions.
 - Other murders: conment from Galduria, murdered in abandoned bar, bodyguards survived now in insane asylum.
+- Got the jade hairpin back from the authorities.
+
+## The Investigation
+
+- Can't tell if Ven Vendor is lying or not, still very angry.
+- Katrine and Harker were in a relationship, used to sneak off for some happy fun times.
+- Ibor and Ven are both likely innocent.
+- Whispers: "Harker had been skimming money from the company, Scarnetti family who owns the mill caught on."
+
+## Insane Asylum
+
+- Guard's name is Grayst.
+- The Skinsaw Man is coming.
+- "He said you would visit me, made a place...he said 'Come to the mist giving to meet the pack'
+- Mist Givings -> Fox Glove manor
+- Grayst is very, very jealous of his master's love of Ayame.
+- Grayst turned into a ghast at the end...which means he was attacked by a ghast.
+- Lumbermill also involved ghasts...bodies need to be investigated ASAP.
+- Aldern Foxglove made the painting, wealthy merchant, front and center in the painting at the Rusty Dragon Inn.
