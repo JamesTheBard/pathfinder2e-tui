@@ -104,14 +104,25 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
             "legendary": 8,
         }
 
-        try:
-            bonus = bonus_map[proficiency]
-        except:
-            return 0
-
-        if proficiency not in bonus_map.keys() or proficiency == "untrained":
-            return bonus_map[proficiency]
+        if proficiency not in bonus_map.keys():
+            proficiency = "untrained"
+        
+        if proficiency == "untrained":
+            if self.has_feat("untrained_improviser"):
+                if self.data.character.level < 5:
+                    return self.data.character.level - 2
+                elif self.data.character.level < 7:
+                    return self.data.character.level - 1
+                else:
+                    return self.data.character.level
+            else:
+                return bonus_map[proficiency]
         return bonus_map[proficiency] + self.character.character_level
+
+    def has_feat(self, feat: str) -> bool:
+        if not self.data.get("feats", False):
+            return False
+        return self.data.feats.get(feat, False)
 
     def process_keywords(self, keywords: str | Iterable[str]) -> tuple[str]:
         """Process the keywords entry and convert it to a default format (tuple)

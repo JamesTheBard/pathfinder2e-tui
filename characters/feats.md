@@ -130,3 +130,16 @@ You can patch up wounds, even in combat. Attempt a Medicine check with the same 
 
 **Keywords** General, Healing, Manipulate, Skill
 
+## Clever Improviser (Feat 5)
+
+**Source**: [Player Core, p. 64](https://2e.aonprd.com/Feats.aspx?ID=4482)
+
+You’ve learned how to handle situations when you’re out of your depth. You gain the _Untrained Improvisation_ general feat. In addition, you can attempt skill actions that normally require you to be trained, even if you are untrained.
+
+**Keywords**: Human
+
+## Untrained Improviser (Feat 3)
+
+**Source**: [Player Core, p. 264](https://2e.aonprd.com/Feats.aspx?ID=5233)
+
+You’ve learned how to handle situations when you’re out of your depth. Your proficiency bonus to untrained skill checks is equal to your level –2. This improves to your level –1 at 5th level and your full level at 7th level. This doesn’t allow you to use the skill’s trained actions.

@@ -478,3 +478,159 @@ You create a ghostly, magical echo of one weapon you're wielding or wearing and 
 Each time you Sustain the spell, you can repeat the attack against any creature within 120 feet.
 
 **Heightened (+2)**: The damage increases by 1d8.
+
+## Level 3
+
+### Agonizing Despair
+
+**Keywords**: emotion, enchantment, fear, mental
+
+**Source**: [Advanced Player's Guide, p. 214](https://2e.aonprd.com/Spells.aspx?ID=665)
+
+**Traditions**: arcane, divine, occult
+
+**Cast**: 2 actions; verbal, somatic
+
+**Range**: 60 feet; **Targets** 1 creature
+
+**Saving Throw**: Will
+
+Your target's mind tumbles down a deep well of dread, dwelling so intently on deep-seated fears that it's painful. The target takes 4d6 mental damage with a Will saving throw.
+
+**Critical Success** The target is unaffected.
+
+**Success** The target takes half damage and becomes _frightened_ 1.
+
+**Failure** The target takes full damage and becomes _frightened_ 2.
+
+**Critical Failure** The target takes double damage and becomes _frightened_ 3.
+
+**Heightened (+1)** Increase the damage by 2d6.
+
+### Annointed Ground
+
+**Keywords**: concentrate, consecration, manipulate
+
+**Source**: [Player Core 2, p. 240](https://2e.aonprd.com/Spells.aspx?ID=1965)
+
+**Traditions**: divine
+
+**Cast**: 1 minute; **Cost** 3 gp worth of oil
+
+**Area**: 30-foot burst centered on you
+
+**Duration**: until the next time you make daily preparations
+
+You sanctify the area, sprinkling it with certain oils and warding it against your foes. Choose aberrations, celestials, dragons, fiends, monitors, or undead. All creatures in the area gain a +1 status bonus to AC, attack rolls, damage rolls, and saving throws against the chosen creatures.
+
+
+### Blindness
+
+**Keywords**: concentrate, incapacitation, manipulate
+
+**Source**: [Player Core, p. 318](https://2e.aonprd.com/Spells.aspx?ID=1453)
+
+**Tradition**: arcane, divine, occult, primal
+
+**Range**: 30 feet; **Targets** 1 creature
+
+**Defense**: Fortitude
+
+You blind the target. The effect is determined by the target's Fortitude save. The target then becomes temporarily immune for 1 minute.
+
+**Critical Success** The target is unaffected.
+
+**Success** The target is _blinded_ until its next turn begins.
+
+**Failure** The target is blinded for 1 minute.
+
+**Critical Failure** The target is blinded permanently.
+
+### Locate
+
+**Keywords**: uncommon, concentrate, detection, manipulate
+
+**Source**: [Player Core, p. 341](https://2e.aonprd.com/Spells.aspx?ID=1588)
+
+**Tradition**: arcane, divine, occult
+
+**Cast**: 10 minutes
+
+**Range**: 500 feet; **Targets** 1 specific object or type of object
+
+**Duration**: sustained
+
+You learn the direction to the target (if you picked a specific object, such as “my mother's sword”) or the nearest target (if you picked a type of object, such as “swords”). If the target is a specific object, you must have observed it directly with your own senses. If it's a type of object, you still need to have an accurate mental image of the type of object. If there's lead or running water between you and the target, this spell can't locate the object. This means you might find a type of object farther away if the nearest one is behind lead or running water.
+
+**Heightened (5th)**: You can target a specific creature or ancestry instead of an object, but you must have met or seen up close the creature or ancestry you want to target.
+
+### Positive Attunement
+
+**Keywords**: healing, necromancy, positive
+
+**Source**: [Secrets of Magic, p. 122](https://2e.aonprd.com/Spells.aspx?ID=972)
+
+**Traditions**: divine, primal
+
+**Cast**: 2 actions; somatic, verbal
+
+**Range**: touch; **Targets** 1 living or undead creature
+
+**Saving Throw**: Will; **Duration** sustained up to 1 minute
+
+You attune a creature to the Positive Energy Plane, connecting its life force without fully transporting it. The creature's appearance becomes more brightly colored. If the creature is living, it heals 1d8 Hit Points immediately and at the end of each of your turns. Effects that increase healing only increase the initial healing.
+
+If the creature is undead or has negative healing, it instead takes 1d8 positive damage, depending on the result of its Will save.
+
+**Critical Success** The creature is unaffected.
+
+**Success** The creature is damaged once and the spell ends.
+
+**Failure** The creature is damaged immediately and at the end of each of your turns (so twice in the round you Cast the Spell).
+
+**Critical Failure** As failure, and the damage is doubled.
+
+**Heightened (+3)** The damage and healing each increase by 1d8.
+
+### Ring of Truth
+
+**Keywords**: uncommon, concentrate, detection, manipulate, mental
+
+**Source**: [Player Core, p. 354](https://2e.aonprd.com/Spells.aspx?ID=1656)
+
+**Traditions**: divine, occult
+
+**Cast**: _Unknown_
+
+**Range**: 30 feet; Area 20-foot burst
+
+**Defense**: Will; **Duration** 10 minutes
+
+You designate an area in which lies are revealed. Creatures in the area also take a –2 status penalty to Deception checks. Each time a creature in the area speaks a true statement, the soft ring of a bell sounds in the area. Creatures are aware of the magic; therefore, they can avoid answering questions to which they would normally respond with a lie, or they can be evasive as long as they remain within the boundaries of the truth. If a creature is in the area when the spell is cast or later enters the area, that creature attempts a Will save. It uses the results of this initial save if it leaves and reenters the area.
+
+**Critical Success** The target is so convincing that the bell rings even if they lie.
+
+**Success** If the target lies and succeeds at their Deception check against all targets, the bell still rings.
+
+**Failure** The bell accurately sees through their deception and will never ring if they lie.
+
+### Safe Passage
+
+**Keywords**: concentrate, manipulate
+
+**Source**: [Player Core, pg. 355](https://2e.aonprd.com/Spells.aspx?ID=1659)
+
+**Traditions**: arcane, divine, occult
+
+**Range** touch; **Area** 10-foot-tall 60-foot-long section of terrain
+
+**Duration**: sustained up to 1 minute
+
+You make passage through the area safe for a brief amount of time. Anyone passing through the area gains the following benefits against harmful effects of the terrain and environment, including environmental damage, hazardous terrain, and hazards in the area. The spell grants a +2 status bonus to AC and saves against such effects, and resistance 5 to all damage from such effects. Furthermore, the spell prevents anything in the area that's prone to collapse, such as a rickety bridge or an unstable ceiling, from collapsing, except under extreme strain that would collapse a normal structure of its type.
+
+_Safe passage_ protects only against harm, not inconvenience, and it doesn't reduce _difficult terrain_, remove the concealed condition caused by precipitation, or the like, nor does it protect against creatures within the spell's area.
+
+**Heightened (5th)** The granted resistance increases to 10, and the area can be 120 feet long.
+
+**Heightened (8th)** The granted resistance increases to 15, and the area can be 500 feet long.
+

@@ -10,27 +10,29 @@ character:
     - common
     - minkaian
   class: cleric
-  level: 4
+  level: 5
 hit_points:
   class: 8
   ancestry: 8
   misc: 0
 stats:
   strength: 10
-  dexterity: 12
+  dexterity: 14
   constitution: 12
-  intelligence: 12
-  wisdom: 18
-  charisma: 16
+  intelligence: 14
+  wisdom: 19
+  charisma: 18
 saves:
   perception:
-    proficiency: trained
+    proficiency: expert
   fortitude:
     proficiency: trained
   reflex:
     proficiency: trained
   willpower:
     proficiency: expert
+feats:
+  untrained_improviser: true
 skills:
   athletics:
     proficiency: trained
@@ -39,7 +41,7 @@ skills:
   diplomacy:
     proficiency: trained
   intimidation:
-    proficiency: trained
+    proficiency: expert
   "lore: politics":
     proficiency: trained
   medicine:
@@ -134,3 +136,25 @@ weapons:
       **Success** The target takes full damage.
 
       **Heightened (+1)** You send one additional needle, increasing the regular damage by 1d4 and increasing the persistent bleed damage on a critical hit by 1.
+  agonizing_despair:
+    weapon_type: spell
+    actions: 2
+    proficiency: trained
+    attack_stat: wisdom
+    damage_type: mental
+    damage_die_size: 6
+    damage_die_quantity: 4
+    keywords: emotion, enchantment, fear, mental, range 60
+    source: Advanced Player's Guide, p. 214
+    notes: >
+      Your target's mind tumbles down a deep well of dread, dwelling so intently on deep-seated fears that it's painful. The target takes 4d6 mental damage with a Will saving throw.
+
+      **Critical Success** The target is unaffected.
+
+      **Success** The target takes half damage and becomes _frightened_ 1.
+
+      **Failure** The target takes full damage and becomes _frightened_ 2.
+
+      **Critical Failure** The target takes double damage and becomes _frightened_ 3.
+
+      **Heightened (+1)** Increase the damage by 2d6.

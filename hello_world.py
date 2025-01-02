@@ -11,6 +11,7 @@ from widgets.weapons_page import (ArmorWidget, NotesWidget, ShieldWidget,
                                   WeaponsWidget)
 from widgets.data_page import DataEditorWidget
 from widgets.feats_page import FeatsEditorWidget, FeatsMarkdown
+from widgets.spells_page import SpellsEditorWidget, SpellsMarkdown
 
 
 class CombatScreen(Screen):
@@ -86,11 +87,11 @@ class SpellsScreen(Screen):
         with TabbedContent():
             with TabPane("Spells"):
                 yield VerticalScroll(
-                    FeatsMarkdown(id="spellsdisplay", savefile="characters/spells.md")
+                    SpellsMarkdown(id="spellsdisplay", savefile="characters/spells.md")
                 )
             with TabPane("Editor"):
                 yield VerticalScroll(
-                    FeatsEditorWidget(savefile="characters/spells.md")
+                    SpellsEditorWidget(savefile="characters/spells.md")
                 )
 
 
