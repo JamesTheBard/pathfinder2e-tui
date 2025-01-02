@@ -106,7 +106,7 @@ class NameWidget(Widget):
         if cs.character.diety:
             text.extend([
                 Text("  Diety: ", style="bold"),
-                Text(f" {cs.character.diety.title()} ", style="on #303030")
+                Text(f" {cs.character.diety.title()} ({cs.character.domain.title()}) ", style="on #303030"),
             ])
 
         return Text().join(text)

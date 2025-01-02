@@ -229,6 +229,24 @@ You ward yourself with shimmering magical energy, gaining a +1 item bonus to AC 
 - **Heightened (8th)**: The item bonus to AC increases to +2, and you gain a +2 item bonus to saving throws.
 - **Heightened (10th)**: The item bonus to AC increases to +3, and you gain a +3 item bonus to saving throws.
 
+### Object Memory (F)
+
+**Keywords**: divination
+
+**Source**: [Gods & Magic, p. 118](https://2e.aonprd.com/Spells.aspx?ID=624)
+
+**Domain**: vigil
+
+**Cast**: 2 actions; somatic, verbal
+
+**Targets**: 1 weapon or tool
+
+**Duration**: 1 minute
+
+By touching an object, you draw forth the experience of those who created and used it. If you touch a weapon, your proficiency rank with that weapon temporarily increases to trained (if it is not already higher). If you touch a tool, your proficiency rank with the next skill check you attempt with that tool (such as a Crafting check with a blacksmith’s hammer) within the spell’s duration temporarily increases to trained (if it is not already higher). This spell has no benefit for activities that take longer than a minute to complete.
+
+**Heightened (6th)** Your proficiency rank increases to expert instead of trained.
+
 ### Protection
 
 **Keywords**: concentrate, manipulate

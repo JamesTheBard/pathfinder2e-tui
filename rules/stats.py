@@ -149,6 +149,7 @@ class Names:
     name: str
     player: str
     diety: Optional[str] = None
+    domain: Optional[str] = None
     speed_bonus: int = 0
     speed: int = 25
 
@@ -173,7 +174,7 @@ class NamesMixin:
             player=data.player,
         )
 
-        optional = ["diety", "speed", "speed_bonus"]
+        optional = ["diety", "domain", "speed", "speed_bonus"]
         for i in optional:
             try:
                 setattr(results, i, data[i])
