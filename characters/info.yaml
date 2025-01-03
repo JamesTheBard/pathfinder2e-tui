@@ -33,7 +33,9 @@ saves:
   willpower:
     proficiency: expert
 feats:
-  untrained_improviser: true
+  - untrained_improviser
+  - toughness
+  - fast_recovery
 skills:
   athletics:
     proficiency: trained

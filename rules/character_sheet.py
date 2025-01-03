@@ -120,9 +120,11 @@ class CharacterSheet(HitPointsMixin, NamesMixin, SkillsMixin, StatsMixin, SavesM
         return bonus_map[proficiency] + self.character.character_level
 
     def has_feat(self, feat: str) -> bool:
+        feat = feat.replace(' ', '_').casefold()
         if not self.data.get("feats", False):
             return False
-        return self.data.feats.get(feat, False)
+        feats = [i.replace(' ', '_').casefold() for i in self.data.feats]
+        return feat in feats
 
     def process_keywords(self, keywords: str | Iterable[str]) -> tuple[str]:
         """Process the keywords entry and convert it to a default format (tuple)

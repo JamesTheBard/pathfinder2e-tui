@@ -240,7 +240,11 @@ class HitPointsMixin:
             constitution=self.stats.get_modifier("constitution"),
         )
 
-        optional = ["toughness", "ancestry", "misc"]
+        feats = ["toughness", "fast_recovery"]
+        for i in feats:
+            setattr(results, i, self.has_feat(i))
+
+        optional = ["misc"]
         for i in optional:
             try:
                 setattr(results, i, data[i])

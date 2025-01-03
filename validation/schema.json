@@ -56,6 +56,10 @@
                     "description": "The diety associated with the character",
                     "type": "string"
                 },
+                "domain": {
+                    "description": "The domain associated with the character",
+                    "type": "string"
+                },
                 "languages": {
                     "description": "The languages the character can understand",
                     "type": ["array", "string"],
@@ -283,6 +287,15 @@
                 }
             },
             "additionalProperties": false
+        },
+        "feats": {
+            "description": "Feats that the character has that affect calculations",
+            "type": [
+                "array"
+            ],
+            "items": {
+                "type": "string"
+            }
         },
         "armor": {
             "description": "The current armor the character is wearing",
