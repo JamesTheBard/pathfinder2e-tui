@@ -115,16 +115,6 @@
                     "type": "number",
                     "minimum": 0
                 },
-                "toughness": {
-                    "description": "Does the character have the Toughness feat?",
-                    "type": "boolean",
-                    "default": false
-                },
-                "fast_recovery": {
-                    "description": "Does the character have the Fast Recovery feat?",
-                    "type": "boolean",
-                    "default": false
-                },
                 "misc": {
                     "description": "The number of hit points gained from other sources",
                     "type": "number",

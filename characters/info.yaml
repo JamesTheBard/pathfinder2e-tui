@@ -34,8 +34,6 @@ saves:
     proficiency: expert
 feats:
   - untrained_improviser
-  - toughness
-  - fast_recovery
 skills:
   athletics:
     proficiency: trained

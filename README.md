@@ -40,3 +40,9 @@ $ poetry run python hello_world.py
 ```
 
 4. Enjoy!
+
+## Supported Feats
+
+- Fast Recovery
+- Toughness
+- Untrained Improviser
