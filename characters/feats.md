@@ -143,3 +143,27 @@ You’ve learned how to handle situations when you’re out of your depth. You g
 **Source**: [Player Core, p. 264](https://2e.aonprd.com/Feats.aspx?ID=5233)
 
 You’ve learned how to handle situations when you’re out of your depth. Your proficiency bonus to untrained skill checks is equal to your level –2. This improves to your level –1 at 5th level and your full level at 7th level. This doesn’t allow you to use the skill’s trained actions.
+
+## Cast Down (Cleric 6)
+
+**Source**: [Player Core, p. 116](https://2e.aonprd.com/Feats.aspx?ID=4661)
+
+The sheer force of your faith can bring a foe crashing down. If the next action you use is to cast harm or heal to damage one creature, the target is knocked prone if it takes any damage from the spell. If the target critically fails its save against the spell, it also takes a –10-foot status penalty to its Speed for 1 minute.
+
+**Keywords**: Cleric, Concentrate, Spellshape
+
+## Streetwise (Skill 6)
+
+**Source**: [Player Core, p. 263](https://2e.aonprd.com/Feats.aspx?ID=5218)
+
+You know about life on the streets and feel the pulse of your local settlement. You can use your Society modifier instead of your Diplomacy modifier to Gather Information. In any settlement you frequent regularly, you can use the Recall Knowledge action with Society to know the same sorts of information that you could discover with Diplomacy to Gather Information. The DC is usually significantly higher, but you know the information without spending time gathering it. If you fail to recall the information, you can still subsequently attempt to Gather Information normally.
+
+**Keywords**: General, Skill
+
+## Nimble Shield Hand (Archetype 6)
+
+**Source**: [Player Core 2, p. 187](https://2e.aonprd.com/Feats.aspx?ID=6264)
+
+You are so used to wielding a shield that you can do so even while using the hand that’s holding it for other tasks that require the dexterity of a hand. The hand you use to wield a shield counts as a free hand for the purposes of the Interact action. You can also hold another object in this hand (but you still can’t use it to wield a weapon). This benefit doesn’t apply to tower shields, which are still too cumbersome.
+
+**Keywords**: Archetype

@@ -9,11 +9,11 @@
 | Cantrip | 5 | Divine Lance, Guidance, Needle Darts, Detect Magic, Rousing Splash |
 | 1st     | 3 | Bless, Enfeeble, Sanctuary |
 | 2nd     | 3 | Cleanse Affliction, Inner Radiance Torrent, Spiritual Armament |
-| 3rd     | 2 | Agonizing Despair, Positive Attunement |
+| 3rd     | 3 | Agonizing Despair, Positive Attunement |
 
 ### Quick Reference
 
-- Spell DC: 21, Spell Mod: +11 (Trained +7, WIS +4)
+- Spell DC: 22, Spell Mod: +12 (Trained +8, WIS +4)
 - Battle Medicine/Treat Wounds: Medicine check, DC 15, immune for an day
 - Treat Wounds removes _Wounded_ condition on success, immune for an hour
 - Spend an hour Treat Wounds after successful check, double HP restored
@@ -28,8 +28,8 @@
 
 ### Status
 
-Heals: 3/5
-Burned spells: 3rd, 2nd
+Heals: 5/5
+Burned spells: None
 
 ## Personal Loot
 

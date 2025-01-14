@@ -11,7 +11,7 @@ character:
     - common
     - minkaian
   class: cleric
-  level: 5
+  level: 6
 hit_points:
   class: 8
   ancestry: 8
@@ -50,7 +50,7 @@ skills:
   religion:
     proficiency: trained
   society:
-    proficiency: trained
+    proficiency: expert
 armor:
   name: Unarmored
   proficiency: trained
