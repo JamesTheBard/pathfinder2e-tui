@@ -8,8 +8,8 @@
 |:---:|:---:|:---:|
 | Cantrip | 5 | Divine Lance, Guidance, Needle Darts, Detect Magic, Rousing Splash |
 | 1st     | 3 | Bless, Enfeeble, Sanctuary |
-| 2nd     | 3 | Dispel Magic, Inner Radiance Torrent, Spiritual Armament |
-| 3rd     | 2 | ????, ???? |
+| 2nd     | 3 | Cleanse Affliction, Inner Radiance Torrent, Spiritual Armament |
+| 3rd     | 2 | Agonizing Despair, Positive Attunement |
 
 ### Quick Reference
 
@@ -26,6 +26,11 @@
 | Master | 25 | 2d8+30 | 4d8+30 | 1d8 |
 | Legendary | 30 | 2d8+50 | 4d8+50 | 1d8 |
 
+### Status
+
+Heals: 3/5
+Burned spells: 3rd, 2nd
+
 ## Personal Loot
 
 **Funds**: 36.6 gold
@@ -36,7 +41,7 @@
 - Religious Symbol
 - Robes (+1 AC)
 - Katana (+1 Striking)
-- Dagger
+- Dagger (x3)
 - Wakazashi (+1)
 - Sturdy Shield
 - Healer's Kit
@@ -69,7 +74,8 @@ This medallion hangs on a leather cord, a silver disc inscribed with the Sihedro
 
 ## Party Loot
 
-- Empty
+- Iron key with leather cord, bears heraldric symbol of a "curious" flower surrounded by thorns.  Found on Philomena's neck.
+- 10 gp (Rogors Craesby)
 
 ## Lumber Mill Notes
 
@@ -99,3 +105,20 @@ This medallion hangs on a leather cord, a silver disc inscribed with the Sihedro
 - Grayst turned into a ghast at the end...which means he was attacked by a ghast.
 - Lumbermill also involved ghasts...bodies need to be investigated ASAP.
 - Aldern Foxglove made the painting, wealthy merchant, front and center in the painting at the Rusty Dragon Inn.
+
+## The Farm
+
+- Going to investigate "scarecrows" that eat dogs.
+- Found two "scarecrow" ghouls, both have the Sihedron carved into them.
+- Bite marks on chest and neck.  Ghoul transformed them, not the rune.
+- Recently succumbed to ghoul fever.
+- Saved Lockeheart's mother and father.  Cleric fully healed the mother of ghoul fever.
+- Time to clear out the rest of the scarecrows.
+- Parents kidnapped, in Foxglove Manor.  Went back to Sandpoint to prepare, rest, then go at it.
+
+## Sandpoint
+
+- Aldern has been rebuilding the manor over the last year.
+- The Foxglove estate--built by Aldern's grandfather--most everyone died to disease.  Aldern's father went back in 40 years later.
+- Creepy shit goes on over there, confirmed by other people.
+- Probably should've asked about Aldern: supposedly has paid up for a room at the inn.

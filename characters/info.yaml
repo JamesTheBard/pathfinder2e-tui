@@ -112,7 +112,7 @@ weapons:
     attack_stat: wisdom
     damage_type: spirit
     damage_die_size: 4
-    damage_die_quantity: 3
+    damage_die_quantity: 4
     keywords: attack, cantrip, concentrate, manipulate, sanctified, spirit, range 60
     source: Player Core, p. 325
     notes: >
